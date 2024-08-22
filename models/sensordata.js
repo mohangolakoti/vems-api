@@ -381,6 +381,12 @@ const sensordataSchema = new Schema(
     THD_I1_meter_14: { type: Schema.Types.Number, required: true },
     THD_I2_meter_14: { type: Schema.Types.Number, required: true },
     THD_I3_meter_14: { type: Schema.Types.Number, required: true },
+
+    timestamp: { type: Date, default: function() { 
+      const now = new Date();
+      const IST_OFFSET = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
+      return new Date(now.getTime() + IST_OFFSET); 
+    } }
   },
   {
     timestamps: true,
