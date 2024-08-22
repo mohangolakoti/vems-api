@@ -2,83 +2,105 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-
- 
 const sensordataSchema = new Schema(
   {
-    lineVlotageR: {
+    meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    lineVoltageY: {
+    Voltage_V1N_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    lineVoltageB: {
+    Voltage_V2N_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    phaseVolate1: {
+    Voltage_V3N_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    phaseVoltage2: {
+    Voltage_V12_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    phaseVoltage3: {
+    Voltage_V23_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    current1: {
+    Voltage_V31_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    current2: {
+    Current_I1_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    current3: {
+    Current_I2_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    totalKW: {
+    Current_I3_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    totalKVA: {
+    Total_KW_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    powerFactor1: {
+    Total_KVA_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    powerFactor2: {
+    Total_KVAR_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    powerFactor3: {
+    Avg_PF_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    AvgPowerFactor: {
+    Frequency_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    frequency: {
+    TotalNet_KWH_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    totalNetKVAH: {
+    TotalNet_KVAH_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    totalNetKVAh: {
+    TotalNet_KVARH_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
-    totalNetKVARH: {
+    Neutral_Current_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_V1_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_V2_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_V3_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_I1_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_I2_meter_1: {
+      type: Schema.Types.Number,
+      required: true,
+    },
+    THD_I3_meter_1: {
       type: Schema.Types.Number,
       required: true,
     },
@@ -87,7 +109,5 @@ const sensordataSchema = new Schema(
     timestamps: true,
   }
 );
-
-  
 
 module.exports = mongoose.model("sensordata", sensordataSchema);

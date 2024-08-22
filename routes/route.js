@@ -3,7 +3,7 @@ const express= require('express');
 const router=express.Router();
 
 
-const sensorDataController=require('../controller/controller');
+const sensorDataController=require('../controllers/controller');
 
 
 router.post("/sensordata",sensorDataController.sensordataHandler);
