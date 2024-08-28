@@ -1473,7 +1473,7 @@ const getdataHandler = async (req, res, next) => {
   // Assuming you want to return data for all entries or the most recent entry
   const data = sensordata.map((dataEntry) => ({
     //Timestamp
-    timestamp: timestamp,
+    timestamp: dataEntry.timestamp,
     // Meter 1
     meter_1: dataEntry.meter_1,
     Voltage_V1N_meter_1: dataEntry.Voltage_V1N_meter_1,
