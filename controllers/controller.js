@@ -24,12 +24,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_1,
     TotalNet_KVARH_meter_1,
     Neutral_Current_meter_1,
-    THD_V1_meter_1,
-    THD_V2_meter_1,
-    THD_V3_meter_1,
-    THD_I1_meter_1,
-    THD_I2_meter_1,
-    THD_I3_meter_1,
 
     // Meter 2
     meter_2,
@@ -51,12 +45,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_2,
     TotalNet_KVARH_meter_2,
     Neutral_Current_meter_2,
-    THD_V1_meter_2,
-    THD_V2_meter_2,
-    THD_V3_meter_2,
-    THD_I1_meter_2,
-    THD_I2_meter_2,
-    THD_I3_meter_2,
 
     // Meter 3
     meter_3,
@@ -78,13 +66,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_3,
     TotalNet_KVARH_meter_3,
     Neutral_Current_meter_3,
-    THD_V1_meter_3,
-    THD_V2_meter_3,
-    THD_V3_meter_3,
-    THD_I1_meter_3,
-    THD_I2_meter_3,
-    THD_I3_meter_3,
-
+   
     // Meter 4
     meter_4,
     Voltage_V1N_meter_4,
@@ -105,12 +87,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_4,
     TotalNet_KVARH_meter_4,
     Neutral_Current_meter_4,
-    THD_V1_meter_4,
-    THD_V2_meter_4,
-    THD_V3_meter_4,
-    THD_I1_meter_4,
-    THD_I2_meter_4,
-    THD_I3_meter_4,
 
     // Meter 5
     meter_5,
@@ -132,13 +108,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_5,
     TotalNet_KVARH_meter_5,
     Neutral_Current_meter_5,
-    THD_V1_meter_5,
-    THD_V2_meter_5,
-    THD_V3_meter_5,
-    THD_I1_meter_5,
-    THD_I2_meter_5,
-    THD_I3_meter_5,
-
+  
     // Meter 6
     meter_6,
     Voltage_V1N_meter_6,
@@ -159,13 +129,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_6,
     TotalNet_KVARH_meter_6,
     Neutral_Current_meter_6,
-    THD_V1_meter_6,
-    THD_V2_meter_6,
-    THD_V3_meter_6,
-    THD_I1_meter_6,
-    THD_I2_meter_6,
-    THD_I3_meter_6,
-
+    
     // Meter 7
     meter_7,
     Voltage_V1N_meter_7,
@@ -186,13 +150,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_7,
     TotalNet_KVARH_meter_7,
     Neutral_Current_meter_7,
-    THD_V1_meter_7,
-    THD_V2_meter_7,
-    THD_V3_meter_7,
-    THD_I1_meter_7,
-    THD_I2_meter_7,
-    THD_I3_meter_7,
-
+    
     // Meter 8
     meter_8,
     Voltage_V1N_meter_8,
@@ -213,13 +171,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_8,
     TotalNet_KVARH_meter_8,
     Neutral_Current_meter_8,
-    THD_V1_meter_8,
-    THD_V2_meter_8,
-    THD_V3_meter_8,
-    THD_I1_meter_8,
-    THD_I2_meter_8,
-    THD_I3_meter_8,
-
+    
     // Meter 9
     meter_9,
     Voltage_V1N_meter_9,
@@ -240,13 +192,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_9,
     TotalNet_KVARH_meter_9,
     Neutral_Current_meter_9,
-    THD_V1_meter_9,
-    THD_V2_meter_9,
-    THD_V3_meter_9,
-    THD_I1_meter_9,
-    THD_I2_meter_9,
-    THD_I3_meter_9,
-
+    
     // Meter 10
     meter_10,
     Voltage_V1N_meter_10,
@@ -267,13 +213,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_10,
     TotalNet_KVARH_meter_10,
     Neutral_Current_meter_10,
-    THD_V1_meter_10,
-    THD_V2_meter_10,
-    THD_V3_meter_10,
-    THD_I1_meter_10,
-    THD_I2_meter_10,
-    THD_I3_meter_10,
-
+    
     // Meter 11
     meter_11,
     Voltage_V1N_meter_11,
@@ -294,13 +234,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_11,
     TotalNet_KVARH_meter_11,
     Neutral_Current_meter_11,
-    THD_V1_meter_11,
-    THD_V2_meter_11,
-    THD_V3_meter_11,
-    THD_I1_meter_11,
-    THD_I2_meter_11,
-    THD_I3_meter_11,
-
+    
     // Meter 12
     meter_12,
     Voltage_V1N_meter_12,
@@ -321,13 +255,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_12,
     TotalNet_KVARH_meter_12,
     Neutral_Current_meter_12,
-    THD_V1_meter_12,
-    THD_V2_meter_12,
-    THD_V3_meter_12,
-    THD_I1_meter_12,
-    THD_I2_meter_12,
-    THD_I3_meter_12,
-
+    
     // Meter 13
     meter_13,
     Voltage_V1N_meter_13,
@@ -348,13 +276,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_13,
     TotalNet_KVARH_meter_13,
     Neutral_Current_meter_13,
-    THD_V1_meter_13,
-    THD_V2_meter_13,
-    THD_V3_meter_13,
-    THD_I1_meter_13,
-    THD_I2_meter_13,
-    THD_I3_meter_13,
-
+    
     // Meter 14
     meter_14,
     Voltage_V1N_meter_14,
@@ -375,13 +297,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_14,
     TotalNet_KVARH_meter_14,
     Neutral_Current_meter_14,
-    THD_V1_meter_14,
-    THD_V2_meter_14,
-    THD_V3_meter_14,
-    THD_I1_meter_14,
-    THD_I2_meter_14,
-    THD_I3_meter_14,
-
+   
     // Meter 15
     meter_15,
     Voltage_V1N_meter_15,
@@ -402,13 +318,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_15,
     TotalNet_KVARH_meter_15,
     Neutral_Current_meter_15,
-    THD_V1_meter_15,
-    THD_V2_meter_15,
-    THD_V3_meter_15,
-    THD_I1_meter_15,
-    THD_I2_meter_15,
-    THD_I3_meter_15,
-
+    
     // Meter 16
     meter_16,
     Voltage_V1N_meter_16,
@@ -429,13 +339,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_16,
     TotalNet_KVARH_meter_16,
     Neutral_Current_meter_16,
-    THD_V1_meter_16,
-    THD_V2_meter_16,
-    THD_V3_meter_16,
-    THD_I1_meter_16,
-    THD_I2_meter_16,
-    THD_I3_meter_16,
-
+    
     // Meter 17
     meter_17,
     Voltage_V1N_meter_17,
@@ -456,13 +360,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_17,
     TotalNet_KVARH_meter_17,
     Neutral_Current_meter_17,
-    THD_V1_meter_17,
-    THD_V2_meter_17,
-    THD_V3_meter_17,
-    THD_I1_meter_17,
-    THD_I2_meter_17,
-    THD_I3_meter_17,
-
+    
     // Meter 18
     meter_18,
     Voltage_V1N_meter_18,
@@ -483,13 +381,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_18,
     TotalNet_KVARH_meter_18,
     Neutral_Current_meter_18,
-    THD_V1_meter_18,
-    THD_V2_meter_18,
-    THD_V3_meter_18,
-    THD_I1_meter_18,
-    THD_I2_meter_18,
-    THD_I3_meter_18,
-
+    
     // Meter 19
     meter_19,
     Voltage_V1N_meter_19,
@@ -510,13 +402,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_19,
     TotalNet_KVARH_meter_19,
     Neutral_Current_meter_19,
-    THD_V1_meter_19,
-    THD_V2_meter_19,
-    THD_V3_meter_19,
-    THD_I1_meter_19,
-    THD_I2_meter_19,
-    THD_I3_meter_19,
-
+    
     // Meter 20
     meter_20,
     Voltage_V1N_meter_20,
@@ -537,12 +423,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_20,
     TotalNet_KVARH_meter_20,
     Neutral_Current_meter_20,
-    THD_V1_meter_20,
-    THD_V2_meter_20,
-    THD_V3_meter_20,
-    THD_I1_meter_20,
-    THD_I2_meter_20,
-    THD_I3_meter_20,
 
     // Meter 21
     meter_21,
@@ -564,13 +444,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_21,
     TotalNet_KVARH_meter_21,
     Neutral_Current_meter_21,
-    THD_V1_meter_21,
-    THD_V2_meter_21,
-    THD_V3_meter_21,
-    THD_I1_meter_21,
-    THD_I2_meter_21,
-    THD_I3_meter_21,
-
+    
     // Meter 22
     meter_22,
     Voltage_V1N_meter_22,
@@ -591,13 +465,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_22,
     TotalNet_KVARH_meter_22,
     Neutral_Current_meter_22,
-    THD_V1_meter_22,
-    THD_V2_meter_22,
-    THD_V3_meter_22,
-    THD_I1_meter_22,
-    THD_I2_meter_22,
-    THD_I3_meter_22,
-
+    
     // Meter 23
     meter_23,
     Voltage_V1N_meter_23,
@@ -618,13 +486,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_23,
     TotalNet_KVARH_meter_23,
     Neutral_Current_meter_23,
-    THD_V1_meter_23,
-    THD_V2_meter_23,
-    THD_V3_meter_23,
-    THD_I1_meter_23,
-    THD_I2_meter_23,
-    THD_I3_meter_23,
-
+    
     // Meter 24
     meter_24,
     Voltage_V1N_meter_24,
@@ -645,13 +507,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_24,
     TotalNet_KVARH_meter_24,
     Neutral_Current_meter_24,
-    THD_V1_meter_24,
-    THD_V2_meter_24,
-    THD_V3_meter_24,
-    THD_I1_meter_24,
-    THD_I2_meter_24,
-    THD_I3_meter_24,
-
+   
     // Meter 25
     meter_25,
     Voltage_V1N_meter_25,
@@ -672,13 +528,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_25,
     TotalNet_KVARH_meter_25,
     Neutral_Current_meter_25,
-    THD_V1_meter_25,
-    THD_V2_meter_25,
-    THD_V3_meter_25,
-    THD_I1_meter_25,
-    THD_I2_meter_25,
-    THD_I3_meter_25,
-
+    
     // Meter 26
     meter_26,
     Voltage_V1N_meter_26,
@@ -699,12 +549,239 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_26,
     TotalNet_KVARH_meter_26,
     Neutral_Current_meter_26,
-    THD_V1_meter_26,
-    THD_V2_meter_26,
-    THD_V3_meter_26,
-    THD_I1_meter_26,
-    THD_I2_meter_26,
-    THD_I3_meter_26,
+
+        // Meter 27
+    meter_27,
+    Voltage_V1N_meter_27,
+    Voltage_V2N_meter_27,
+    Voltage_V3N_meter_27,
+    Voltage_V12_meter_27,
+    Voltage_V23_meter_27,
+    Voltage_V31_meter_27,
+    Current_I1_meter_27,
+    Current_I2_meter_27,
+    Current_I3_meter_27,
+    Total_KW_meter_27,
+    Total_KVA_meter_27,
+    Total_KVAR_meter_27,
+    Avg_PF_meter_27,
+    Frequency_meter_27,
+    TotalNet_KWH_meter_27,
+    TotalNet_KVAH_meter_27,
+    TotalNet_KVARH_meter_27,
+    Neutral_Current_meter_27,
+
+    // Meter 28
+    meter_28,
+    Voltage_V1N_meter_28,
+    Voltage_V2N_meter_28,
+    Voltage_V3N_meter_28,
+    Voltage_V12_meter_28,
+    Voltage_V23_meter_28,
+    Voltage_V31_meter_28,
+    Current_I1_meter_28,
+    Current_I2_meter_28,
+    Current_I3_meter_28,
+    Total_KW_meter_28,
+    Total_KVA_meter_28,
+    Total_KVAR_meter_28,
+    Avg_PF_meter_28,
+    Frequency_meter_28,
+    TotalNet_KWH_meter_28,
+    TotalNet_KVAH_meter_28,
+    TotalNet_KVARH_meter_28,
+    Neutral_Current_meter_28,
+
+    // Meter 29
+    meter_29,
+    Voltage_V1N_meter_29,
+    Voltage_V2N_meter_29,
+    Voltage_V3N_meter_29,
+    Voltage_V12_meter_29,
+    Voltage_V23_meter_29,
+    Voltage_V31_meter_29,
+    Current_I1_meter_29,
+    Current_I2_meter_29,
+    Current_I3_meter_29,
+    Total_KW_meter_29,
+    Total_KVA_meter_29,
+    Total_KVAR_meter_29,
+    Avg_PF_meter_29,
+    Frequency_meter_29,
+    TotalNet_KWH_meter_29,
+    TotalNet_KVAH_meter_29,
+    TotalNet_KVARH_meter_29,
+    Neutral_Current_meter_29,
+
+    // Meter 30
+    meter_30,
+    Voltage_V1N_meter_30,
+    Voltage_V2N_meter_30,
+    Voltage_V3N_meter_30,
+    Voltage_V12_meter_30,
+    Voltage_V23_meter_30,
+    Voltage_V31_meter_30,
+    Current_I1_meter_30,
+    Current_I2_meter_30,
+    Current_I3_meter_30,
+    Total_KW_meter_30,
+    Total_KVA_meter_30,
+    Total_KVAR_meter_30,
+    Avg_PF_meter_30,
+    Frequency_meter_30,
+    TotalNet_KWH_meter_30,
+    TotalNet_KVAH_meter_30,
+    TotalNet_KVARH_meter_30,
+    Neutral_Current_meter_30,
+
+    // Meter 31
+    meter_31,
+    Voltage_V1N_meter_31,
+    Voltage_V2N_meter_31,
+    Voltage_V3N_meter_31,
+    Voltage_V12_meter_31,
+    Voltage_V23_meter_31,
+    Voltage_V31_meter_31,
+    Current_I1_meter_31,
+    Current_I2_meter_31,
+    Current_I3_meter_31,
+    Total_KW_meter_31,
+    Total_KVA_meter_31,
+    Total_KVAR_meter_31,
+    Avg_PF_meter_31,
+    Frequency_meter_31,
+    TotalNet_KWH_meter_31,
+    TotalNet_KVAH_meter_31,
+    TotalNet_KVARH_meter_31,
+    Neutral_Current_meter_31,
+
+    // Meter 32
+    meter_32,
+    Voltage_V1N_meter_32,
+    Voltage_V2N_meter_32,
+    Voltage_V3N_meter_32,
+    Voltage_V12_meter_32,
+    Voltage_V23_meter_32,
+    Voltage_V31_meter_32,
+    Current_I1_meter_32,
+    Current_I2_meter_32,
+    Current_I3_meter_32,
+    Total_KW_meter_32,
+    Total_KVA_meter_32,
+    Total_KVAR_meter_32,
+    Avg_PF_meter_32,
+    Frequency_meter_32,
+    TotalNet_KWH_meter_32,
+    TotalNet_KVAH_meter_32,
+    TotalNet_KVARH_meter_32,
+    Neutral_Current_meter_32,
+
+    // Meter 33
+    meter_33,
+    Voltage_V1N_meter_33,
+    Voltage_V2N_meter_33,
+    Voltage_V3N_meter_33,
+    Voltage_V12_meter_33,
+    Voltage_V23_meter_33,
+    Voltage_V31_meter_33,
+    Current_I1_meter_33,
+    Current_I2_meter_33,
+    Current_I3_meter_33,
+    Total_KW_meter_33,
+    Total_KVA_meter_33,
+    Total_KVAR_meter_33,
+    Avg_PF_meter_33,
+    Frequency_meter_33,
+    TotalNet_KWH_meter_33,
+    TotalNet_KVAH_meter_33,
+    TotalNet_KVARH_meter_33,
+    Neutral_Current_meter_33,
+
+    // Meter 34
+    meter_34,
+    Voltage_V1N_meter_34,
+    Voltage_V2N_meter_34,
+    Voltage_V3N_meter_34,
+    Voltage_V12_meter_34,
+    Voltage_V23_meter_34,
+    Voltage_V31_meter_34,
+    Current_I1_meter_34,
+    Current_I2_meter_34,
+    Current_I3_meter_34,
+    Total_KW_meter_34,
+    Total_KVA_meter_34,
+    Total_KVAR_meter_34,
+    Avg_PF_meter_34,
+    Frequency_meter_34,
+    TotalNet_KWH_meter_34,
+    TotalNet_KVAH_meter_34,
+    TotalNet_KVARH_meter_34,
+    Neutral_Current_meter_34,
+
+    // Meter 35
+    meter_35,
+    Voltage_V1N_meter_35,
+    Voltage_V2N_meter_35,
+    Voltage_V3N_meter_35,
+    Voltage_V12_meter_35,
+    Voltage_V23_meter_35,
+    Voltage_V31_meter_35,
+    Current_I1_meter_35,
+    Current_I2_meter_35,
+    Current_I3_meter_35,
+    Total_KW_meter_35,
+    Total_KVA_meter_35,
+    Total_KVAR_meter_35,
+    Avg_PF_meter_35,
+    Frequency_meter_35,
+    TotalNet_KWH_meter_35,
+    TotalNet_KVAH_meter_35,
+    TotalNet_KVARH_meter_35,
+    Neutral_Current_meter_35,
+
+    // Meter 36
+    meter_36,
+    Voltage_V1N_meter_36,
+    Voltage_V2N_meter_36,
+    Voltage_V3N_meter_36,
+    Voltage_V12_meter_36,
+    Voltage_V23_meter_36,
+    Voltage_V31_meter_36,
+    Current_I1_meter_36,
+    Current_I2_meter_36,
+    Current_I3_meter_36,
+    Total_KW_meter_36,
+    Total_KVA_meter_36,
+    Total_KVAR_meter_36,
+    Avg_PF_meter_36,
+    Frequency_meter_36,
+    TotalNet_KWH_meter_36,
+    TotalNet_KVAH_meter_36,
+    TotalNet_KVARH_meter_36,
+    Neutral_Current_meter_36,
+
+    // Meter 37
+    meter_37,
+    Voltage_V1N_meter_37,
+    Voltage_V2N_meter_37,
+    Voltage_V3N_meter_37,
+    Voltage_V12_meter_37,
+    Voltage_V23_meter_37,
+    Voltage_V31_meter_37,
+    Current_I1_meter_37,
+    Current_I2_meter_37,
+    Current_I3_meter_37,
+    Total_KW_meter_37,
+    Total_KVA_meter_37,
+    Total_KVAR_meter_37,
+    Avg_PF_meter_37,
+    Frequency_meter_37,
+    TotalNet_KWH_meter_37,
+    TotalNet_KVAH_meter_37,
+    TotalNet_KVARH_meter_37,
+    Neutral_Current_meter_37,
+
+    
   } = req.body;
 
   let exists = false;
@@ -744,12 +821,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_1,
     TotalNet_KVARH_meter_1,
     Neutral_Current_meter_1,
-    THD_V1_meter_1,
-    THD_V2_meter_1,
-    THD_V3_meter_1,
-    THD_I1_meter_1,
-    THD_I2_meter_1,
-    THD_I3_meter_1,
 
     // Meter 2
     meter_2,
@@ -771,12 +842,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_2,
     TotalNet_KVARH_meter_2,
     Neutral_Current_meter_2,
-    THD_V1_meter_2,
-    THD_V2_meter_2,
-    THD_V3_meter_2,
-    THD_I1_meter_2,
-    THD_I2_meter_2,
-    THD_I3_meter_2,
 
     // Meter 3
     meter_3,
@@ -798,12 +863,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_3,
     TotalNet_KVARH_meter_3,
     Neutral_Current_meter_3,
-    THD_V1_meter_3,
-    THD_V2_meter_3,
-    THD_V3_meter_3,
-    THD_I1_meter_3,
-    THD_I2_meter_3,
-    THD_I3_meter_3,
 
     // Meter 4
     meter_4,
@@ -825,12 +884,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_4,
     TotalNet_KVARH_meter_4,
     Neutral_Current_meter_4,
-    THD_V1_meter_4,
-    THD_V2_meter_4,
-    THD_V3_meter_4,
-    THD_I1_meter_4,
-    THD_I2_meter_4,
-    THD_I3_meter_4,
 
     // Meter 5
     meter_5,
@@ -852,12 +905,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_5,
     TotalNet_KVARH_meter_5,
     Neutral_Current_meter_5,
-    THD_V1_meter_5,
-    THD_V2_meter_5,
-    THD_V3_meter_5,
-    THD_I1_meter_5,
-    THD_I2_meter_5,
-    THD_I3_meter_5,
 
     // Meter 6
     meter_6,
@@ -879,12 +926,6 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_6,
     TotalNet_KVARH_meter_6,
     Neutral_Current_meter_6,
-    THD_V1_meter_6,
-    THD_V2_meter_6,
-    THD_V3_meter_6,
-    THD_I1_meter_6,
-    THD_I2_meter_6,
-    THD_I3_meter_6,
 
     // Meter 7
     meter_7,
@@ -906,13 +947,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_7,
     TotalNet_KVARH_meter_7,
     Neutral_Current_meter_7,
-    THD_V1_meter_7,
-    THD_V2_meter_7,
-    THD_V3_meter_7,
-    THD_I1_meter_7,
-    THD_I2_meter_7,
-    THD_I3_meter_7,
-
+    
     // Meter 8
     meter_8,
     Voltage_V1N_meter_8,
@@ -933,13 +968,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_8,
     TotalNet_KVARH_meter_8,
     Neutral_Current_meter_8,
-    THD_V1_meter_8,
-    THD_V2_meter_8,
-    THD_V3_meter_8,
-    THD_I1_meter_8,
-    THD_I2_meter_8,
-    THD_I3_meter_8,
-
+   
     // Meter 9
     meter_9,
     Voltage_V1N_meter_9,
@@ -960,13 +989,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_9,
     TotalNet_KVARH_meter_9,
     Neutral_Current_meter_9,
-    THD_V1_meter_9,
-    THD_V2_meter_9,
-    THD_V3_meter_9,
-    THD_I1_meter_9,
-    THD_I2_meter_9,
-    THD_I3_meter_9,
-
+   
     // Meter 10
     meter_10,
     Voltage_V1N_meter_10,
@@ -987,13 +1010,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_10,
     TotalNet_KVARH_meter_10,
     Neutral_Current_meter_10,
-    THD_V1_meter_10,
-    THD_V2_meter_10,
-    THD_V3_meter_10,
-    THD_I1_meter_10,
-    THD_I2_meter_10,
-    THD_I3_meter_10,
-
+    
     // Meter 11
     meter_11,
     Voltage_V1N_meter_11,
@@ -1014,13 +1031,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_11,
     TotalNet_KVARH_meter_11,
     Neutral_Current_meter_11,
-    THD_V1_meter_11,
-    THD_V2_meter_11,
-    THD_V3_meter_11,
-    THD_I1_meter_11,
-    THD_I2_meter_11,
-    THD_I3_meter_11,
-
+    
     // Meter 12
     meter_12,
     Voltage_V1N_meter_12,
@@ -1041,13 +1052,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_12,
     TotalNet_KVARH_meter_12,
     Neutral_Current_meter_12,
-    THD_V1_meter_12,
-    THD_V2_meter_12,
-    THD_V3_meter_12,
-    THD_I1_meter_12,
-    THD_I2_meter_12,
-    THD_I3_meter_12,
-
+    
     // Meter 13
     meter_13,
     Voltage_V1N_meter_13,
@@ -1068,13 +1073,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_13,
     TotalNet_KVARH_meter_13,
     Neutral_Current_meter_13,
-    THD_V1_meter_13,
-    THD_V2_meter_13,
-    THD_V3_meter_13,
-    THD_I1_meter_13,
-    THD_I2_meter_13,
-    THD_I3_meter_13,
-
+    
     // Meter 14
     meter_14,
     Voltage_V1N_meter_14,
@@ -1095,13 +1094,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_14,
     TotalNet_KVARH_meter_14,
     Neutral_Current_meter_14,
-    THD_V1_meter_14,
-    THD_V2_meter_14,
-    THD_V3_meter_14,
-    THD_I1_meter_14,
-    THD_I2_meter_14,
-    THD_I3_meter_14,
-
+    
     // Meter 15
     meter_15,
     Voltage_V1N_meter_15,
@@ -1122,13 +1115,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_15,
     TotalNet_KVARH_meter_15,
     Neutral_Current_meter_15,
-    THD_V1_meter_15,
-    THD_V2_meter_15,
-    THD_V3_meter_15,
-    THD_I1_meter_15,
-    THD_I2_meter_15,
-    THD_I3_meter_15,
-
+   
     // Meter 16
     meter_16,
     Voltage_V1N_meter_16,
@@ -1149,13 +1136,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_16,
     TotalNet_KVARH_meter_16,
     Neutral_Current_meter_16,
-    THD_V1_meter_16,
-    THD_V2_meter_16,
-    THD_V3_meter_16,
-    THD_I1_meter_16,
-    THD_I2_meter_16,
-    THD_I3_meter_16,
-
+    
     // Meter 17
     meter_17,
     Voltage_V1N_meter_17,
@@ -1176,13 +1157,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_17,
     TotalNet_KVARH_meter_17,
     Neutral_Current_meter_17,
-    THD_V1_meter_17,
-    THD_V2_meter_17,
-    THD_V3_meter_17,
-    THD_I1_meter_17,
-    THD_I2_meter_17,
-    THD_I3_meter_17,
-
+    
     // Meter 18
     meter_18,
     Voltage_V1N_meter_18,
@@ -1203,13 +1178,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_18,
     TotalNet_KVARH_meter_18,
     Neutral_Current_meter_18,
-    THD_V1_meter_18,
-    THD_V2_meter_18,
-    THD_V3_meter_18,
-    THD_I1_meter_18,
-    THD_I2_meter_18,
-    THD_I3_meter_18,
-
+    
     // Meter 19
     meter_19,
     Voltage_V1N_meter_19,
@@ -1230,13 +1199,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_19,
     TotalNet_KVARH_meter_19,
     Neutral_Current_meter_19,
-    THD_V1_meter_19,
-    THD_V2_meter_19,
-    THD_V3_meter_19,
-    THD_I1_meter_19,
-    THD_I2_meter_19,
-    THD_I3_meter_19,
-
+    
     // Meter 20
     meter_20,
     Voltage_V1N_meter_20,
@@ -1257,13 +1220,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_20,
     TotalNet_KVARH_meter_20,
     Neutral_Current_meter_20,
-    THD_V1_meter_20,
-    THD_V2_meter_20,
-    THD_V3_meter_20,
-    THD_I1_meter_20,
-    THD_I2_meter_20,
-    THD_I3_meter_20,
-
+    
     // Meter 21
     meter_21,
     Voltage_V1N_meter_21,
@@ -1284,13 +1241,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_21,
     TotalNet_KVARH_meter_21,
     Neutral_Current_meter_21,
-    THD_V1_meter_21,
-    THD_V2_meter_21,
-    THD_V3_meter_21,
-    THD_I1_meter_21,
-    THD_I2_meter_21,
-    THD_I3_meter_21,
-
+    
     // Meter 22
     meter_22,
     Voltage_V1N_meter_22,
@@ -1311,13 +1262,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_22,
     TotalNet_KVARH_meter_22,
     Neutral_Current_meter_22,
-    THD_V1_meter_22,
-    THD_V2_meter_22,
-    THD_V3_meter_22,
-    THD_I1_meter_22,
-    THD_I2_meter_22,
-    THD_I3_meter_22,
-
+    
     // Meter 23
     meter_23,
     Voltage_V1N_meter_23,
@@ -1338,13 +1283,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_23,
     TotalNet_KVARH_meter_23,
     Neutral_Current_meter_23,
-    THD_V1_meter_23,
-    THD_V2_meter_23,
-    THD_V3_meter_23,
-    THD_I1_meter_23,
-    THD_I2_meter_23,
-    THD_I3_meter_23,
-
+   
     // Meter 24
     meter_24,
     Voltage_V1N_meter_24,
@@ -1365,13 +1304,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_24,
     TotalNet_KVARH_meter_24,
     Neutral_Current_meter_24,
-    THD_V1_meter_24,
-    THD_V2_meter_24,
-    THD_V3_meter_24,
-    THD_I1_meter_24,
-    THD_I2_meter_24,
-    THD_I3_meter_24,
-
+    
     // Meter 25
     meter_25,
     Voltage_V1N_meter_25,
@@ -1392,13 +1325,7 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_25,
     TotalNet_KVARH_meter_25,
     Neutral_Current_meter_25,
-    THD_V1_meter_25,
-    THD_V2_meter_25,
-    THD_V3_meter_25,
-    THD_I1_meter_25,
-    THD_I2_meter_25,
-    THD_I3_meter_25,
-
+    
     // Meter 26
     meter_26,
     Voltage_V1N_meter_26,
@@ -1419,12 +1346,239 @@ const sensordataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_26,
     TotalNet_KVARH_meter_26,
     Neutral_Current_meter_26,
-    THD_V1_meter_26,
-    THD_V2_meter_26,
-    THD_V3_meter_26,
-    THD_I1_meter_26,
-    THD_I2_meter_26,
-    THD_I3_meter_26,
+
+        // Meter 27
+    meter_27,
+    Voltage_V1N_meter_27,
+    Voltage_V2N_meter_27,
+    Voltage_V3N_meter_27,
+    Voltage_V12_meter_27,
+    Voltage_V23_meter_27,
+    Voltage_V31_meter_27,
+    Current_I1_meter_27,
+    Current_I2_meter_27,
+    Current_I3_meter_27,
+    Total_KW_meter_27,
+    Total_KVA_meter_27,
+    Total_KVAR_meter_27,
+    Avg_PF_meter_27,
+    Frequency_meter_27,
+    TotalNet_KWH_meter_27,
+    TotalNet_KVAH_meter_27,
+    TotalNet_KVARH_meter_27,
+    Neutral_Current_meter_27,
+
+    // Meter 28
+    meter_28,
+    Voltage_V1N_meter_28,
+    Voltage_V2N_meter_28,
+    Voltage_V3N_meter_28,
+    Voltage_V12_meter_28,
+    Voltage_V23_meter_28,
+    Voltage_V31_meter_28,
+    Current_I1_meter_28,
+    Current_I2_meter_28,
+    Current_I3_meter_28,
+    Total_KW_meter_28,
+    Total_KVA_meter_28,
+    Total_KVAR_meter_28,
+    Avg_PF_meter_28,
+    Frequency_meter_28,
+    TotalNet_KWH_meter_28,
+    TotalNet_KVAH_meter_28,
+    TotalNet_KVARH_meter_28,
+    Neutral_Current_meter_28,
+
+    // Meter 29
+    meter_29,
+    Voltage_V1N_meter_29,
+    Voltage_V2N_meter_29,
+    Voltage_V3N_meter_29,
+    Voltage_V12_meter_29,
+    Voltage_V23_meter_29,
+    Voltage_V31_meter_29,
+    Current_I1_meter_29,
+    Current_I2_meter_29,
+    Current_I3_meter_29,
+    Total_KW_meter_29,
+    Total_KVA_meter_29,
+    Total_KVAR_meter_29,
+    Avg_PF_meter_29,
+    Frequency_meter_29,
+    TotalNet_KWH_meter_29,
+    TotalNet_KVAH_meter_29,
+    TotalNet_KVARH_meter_29,
+    Neutral_Current_meter_29,
+
+    // Meter 30
+    meter_30,
+    Voltage_V1N_meter_30,
+    Voltage_V2N_meter_30,
+    Voltage_V3N_meter_30,
+    Voltage_V12_meter_30,
+    Voltage_V23_meter_30,
+    Voltage_V31_meter_30,
+    Current_I1_meter_30,
+    Current_I2_meter_30,
+    Current_I3_meter_30,
+    Total_KW_meter_30,
+    Total_KVA_meter_30,
+    Total_KVAR_meter_30,
+    Avg_PF_meter_30,
+    Frequency_meter_30,
+    TotalNet_KWH_meter_30,
+    TotalNet_KVAH_meter_30,
+    TotalNet_KVARH_meter_30,
+    Neutral_Current_meter_30,
+
+    // Meter 31
+    meter_31,
+    Voltage_V1N_meter_31,
+    Voltage_V2N_meter_31,
+    Voltage_V3N_meter_31,
+    Voltage_V12_meter_31,
+    Voltage_V23_meter_31,
+    Voltage_V31_meter_31,
+    Current_I1_meter_31,
+    Current_I2_meter_31,
+    Current_I3_meter_31,
+    Total_KW_meter_31,
+    Total_KVA_meter_31,
+    Total_KVAR_meter_31,
+    Avg_PF_meter_31,
+    Frequency_meter_31,
+    TotalNet_KWH_meter_31,
+    TotalNet_KVAH_meter_31,
+    TotalNet_KVARH_meter_31,
+    Neutral_Current_meter_31,
+
+    // Meter 32
+    meter_32,
+    Voltage_V1N_meter_32,
+    Voltage_V2N_meter_32,
+    Voltage_V3N_meter_32,
+    Voltage_V12_meter_32,
+    Voltage_V23_meter_32,
+    Voltage_V31_meter_32,
+    Current_I1_meter_32,
+    Current_I2_meter_32,
+    Current_I3_meter_32,
+    Total_KW_meter_32,
+    Total_KVA_meter_32,
+    Total_KVAR_meter_32,
+    Avg_PF_meter_32,
+    Frequency_meter_32,
+    TotalNet_KWH_meter_32,
+    TotalNet_KVAH_meter_32,
+    TotalNet_KVARH_meter_32,
+    Neutral_Current_meter_32,
+
+    // Meter 33
+    meter_33,
+    Voltage_V1N_meter_33,
+    Voltage_V2N_meter_33,
+    Voltage_V3N_meter_33,
+    Voltage_V12_meter_33,
+    Voltage_V23_meter_33,
+    Voltage_V31_meter_33,
+    Current_I1_meter_33,
+    Current_I2_meter_33,
+    Current_I3_meter_33,
+    Total_KW_meter_33,
+    Total_KVA_meter_33,
+    Total_KVAR_meter_33,
+    Avg_PF_meter_33,
+    Frequency_meter_33,
+    TotalNet_KWH_meter_33,
+    TotalNet_KVAH_meter_33,
+    TotalNet_KVARH_meter_33,
+    Neutral_Current_meter_33,
+
+    // Meter 34
+    meter_34,
+    Voltage_V1N_meter_34,
+    Voltage_V2N_meter_34,
+    Voltage_V3N_meter_34,
+    Voltage_V12_meter_34,
+    Voltage_V23_meter_34,
+    Voltage_V31_meter_34,
+    Current_I1_meter_34,
+    Current_I2_meter_34,
+    Current_I3_meter_34,
+    Total_KW_meter_34,
+    Total_KVA_meter_34,
+    Total_KVAR_meter_34,
+    Avg_PF_meter_34,
+    Frequency_meter_34,
+    TotalNet_KWH_meter_34,
+    TotalNet_KVAH_meter_34,
+    TotalNet_KVARH_meter_34,
+    Neutral_Current_meter_34,
+
+    // Meter 35
+    meter_35,
+    Voltage_V1N_meter_35,
+    Voltage_V2N_meter_35,
+    Voltage_V3N_meter_35,
+    Voltage_V12_meter_35,
+    Voltage_V23_meter_35,
+    Voltage_V31_meter_35,
+    Current_I1_meter_35,
+    Current_I2_meter_35,
+    Current_I3_meter_35,
+    Total_KW_meter_35,
+    Total_KVA_meter_35,
+    Total_KVAR_meter_35,
+    Avg_PF_meter_35,
+    Frequency_meter_35,
+    TotalNet_KWH_meter_35,
+    TotalNet_KVAH_meter_35,
+    TotalNet_KVARH_meter_35,
+    Neutral_Current_meter_35,
+
+    // Meter 36
+    meter_36,
+    Voltage_V1N_meter_36,
+    Voltage_V2N_meter_36,
+    Voltage_V3N_meter_36,
+    Voltage_V12_meter_36,
+    Voltage_V23_meter_36,
+    Voltage_V31_meter_36,
+    Current_I1_meter_36,
+    Current_I2_meter_36,
+    Current_I3_meter_36,
+    Total_KW_meter_36,
+    Total_KVA_meter_36,
+    Total_KVAR_meter_36,
+    Avg_PF_meter_36,
+    Frequency_meter_36,
+    TotalNet_KWH_meter_36,
+    TotalNet_KVAH_meter_36,
+    TotalNet_KVARH_meter_36,
+    Neutral_Current_meter_36,
+
+    // Meter 37
+    meter_37,
+    Voltage_V1N_meter_37,
+    Voltage_V2N_meter_37,
+    Voltage_V3N_meter_37,
+    Voltage_V12_meter_37,
+    Voltage_V23_meter_37,
+    Voltage_V31_meter_37,
+    Current_I1_meter_37,
+    Current_I2_meter_37,
+    Current_I3_meter_37,
+    Total_KW_meter_37,
+    Total_KVA_meter_37,
+    Total_KVAR_meter_37,
+    Avg_PF_meter_37,
+    Frequency_meter_37,
+    TotalNet_KWH_meter_37,
+    TotalNet_KVAH_meter_37,
+    TotalNet_KVARH_meter_37,
+    Neutral_Current_meter_37,
+
+   
   };
 
   if (exists) {
@@ -1494,12 +1648,6 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_1: dataEntry.TotalNet_KVAH_meter_1,
     TotalNet_KVARH_meter_1: dataEntry.TotalNet_KVARH_meter_1,
     Neutral_Current_meter_1: dataEntry.Neutral_Current_meter_1,
-    THD_V1_meter_1: dataEntry.THD_V1_meter_1,
-    THD_V2_meter_1: dataEntry.THD_V2_meter_1,
-    THD_V3_meter_1: dataEntry.THD_V3_meter_1,
-    THD_I1_meter_1: dataEntry.THD_I1_meter_1,
-    THD_I2_meter_1: dataEntry.THD_I2_meter_1,
-    THD_I3_meter_1: dataEntry.THD_I3_meter_1,
 
     // Meter 2
     meter_2: dataEntry.meter_2,
@@ -1521,13 +1669,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_2: dataEntry.TotalNet_KVAH_meter_2,
     TotalNet_KVARH_meter_2: dataEntry.TotalNet_KVARH_meter_2,
     Neutral_Current_meter_2: dataEntry.Neutral_Current_meter_2,
-    THD_V1_meter_2: dataEntry.THD_V1_meter_2,
-    THD_V2_meter_2: dataEntry.THD_V2_meter_2,
-    THD_V3_meter_2: dataEntry.THD_V3_meter_2,
-    THD_I1_meter_2: dataEntry.THD_I1_meter_2,
-    THD_I2_meter_2: dataEntry.THD_I2_meter_2,
-    THD_I3_meter_2: dataEntry.THD_I3_meter_2,
-
+    
     // Meter 3
     meter_3: dataEntry.meter_3,
     Voltage_V1N_meter_3: dataEntry.Voltage_V1N_meter_3,
@@ -1548,13 +1690,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_3: dataEntry.TotalNet_KVAH_meter_3,
     TotalNet_KVARH_meter_3: dataEntry.TotalNet_KVARH_meter_3,
     Neutral_Current_meter_3: dataEntry.Neutral_Current_meter_3,
-    THD_V1_meter_3: dataEntry.THD_V1_meter_3,
-    THD_V2_meter_3: dataEntry.THD_V2_meter_3,
-    THD_V3_meter_3: dataEntry.THD_V3_meter_3,
-    THD_I1_meter_3: dataEntry.THD_I1_meter_3,
-    THD_I2_meter_3: dataEntry.THD_I2_meter_3,
-    THD_I3_meter_3: dataEntry.THD_I3_meter_3,
-
+    
     // Continue similarly for Meter 4 through Meter 14...
     meter_4: dataEntry.meter_4,
     Voltage_V1N_meter_4: dataEntry.Voltage_V1N_meter_4,
@@ -1575,14 +1711,8 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_4: dataEntry.TotalNet_KVAH_meter_4,
     TotalNet_KVARH_meter_4: dataEntry.TotalNet_KVARH_meter_4,
     Neutral_Current_meter_4: dataEntry.Neutral_Current_meter_4,
-    THD_V1_meter_4: dataEntry.THD_V1_meter_4,
-    THD_V2_meter_4: dataEntry.THD_V2_meter_4,
-    THD_V3_meter_4: dataEntry.THD_V3_meter_4,
-    THD_I1_meter_4: dataEntry.THD_I1_meter_4,
-    THD_I2_meter_4: dataEntry.THD_I2_meter_4,
-    THD_I3_meter_4: dataEntry.THD_I3_meter_4,
 
-    // Continue similarly for Meter 5 through Meter 14...
+    // Meter 5 
     meter_5: dataEntry.meter_5,
     Voltage_V1N_meter_5: dataEntry.Voltage_V1N_meter_5,
     Voltage_V2N_meter_5: dataEntry.Voltage_V2N_meter_5,
@@ -1602,13 +1732,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_5: dataEntry.TotalNet_KVAH_meter_5,
     TotalNet_KVARH_meter_5: dataEntry.TotalNet_KVARH_meter_5,
     Neutral_Current_meter_5: dataEntry.Neutral_Current_meter_5,
-    THD_V1_meter_5: dataEntry.THD_V1_meter_5,
-    THD_V2_meter_5: dataEntry.THD_V2_meter_5,
-    THD_V3_meter_5: dataEntry.THD_V3_meter_5,
-    THD_I1_meter_5: dataEntry.THD_I1_meter_5,
-    THD_I2_meter_5: dataEntry.THD_I2_meter_5,
-    THD_I3_meter_5: dataEntry.THD_I3_meter_5,
-
+   
     // Continue similarly for Meter 6 through Meter 14...
     // Example for Meter 6
     meter_6: dataEntry.meter_6,
@@ -1630,13 +1754,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_6: dataEntry.TotalNet_KVAH_meter_6,
     TotalNet_KVARH_meter_6: dataEntry.TotalNet_KVARH_meter_6,
     Neutral_Current_meter_6: dataEntry.Neutral_Current_meter_6,
-    THD_V1_meter_6: dataEntry.THD_V1_meter_6,
-    THD_V2_meter_6: dataEntry.THD_V2_meter_6,
-    THD_V3_meter_6: dataEntry.THD_V3_meter_6,
-    THD_I1_meter_6: dataEntry.THD_I1_meter_6,
-    THD_I2_meter_6: dataEntry.THD_I2_meter_6,
-    THD_I3_meter_6: dataEntry.THD_I3_meter_6,
-
+    
     // Example for Meter 7
     meter_7: dataEntry.meter_7,
     Voltage_V1N_meter_7: dataEntry.Voltage_V1N_meter_7,
@@ -1657,13 +1775,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_7: dataEntry.TotalNet_KVAH_meter_7,
     TotalNet_KVARH_meter_7: dataEntry.TotalNet_KVARH_meter_7,
     Neutral_Current_meter_7: dataEntry.Neutral_Current_meter_7,
-    THD_V1_meter_7: dataEntry.THD_V1_meter_7,
-    THD_V2_meter_7: dataEntry.THD_V2_meter_7,
-    THD_V3_meter_7: dataEntry.THD_V3_meter_7,
-    THD_I1_meter_7: dataEntry.THD_I1_meter_7,
-    THD_I2_meter_7: dataEntry.THD_I2_meter_7,
-    THD_I3_meter_7: dataEntry.THD_I3_meter_7,
-
+    
     // Example for Meter 8
     meter_8: dataEntry.meter_8,
     Voltage_V1N_meter_8: dataEntry.Voltage_V1N_meter_8,
@@ -1684,13 +1796,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_8: dataEntry.TotalNet_KVAH_meter_8,
     TotalNet_KVARH_meter_8: dataEntry.TotalNet_KVARH_meter_8,
     Neutral_Current_meter_8: dataEntry.Neutral_Current_meter_8,
-    THD_V1_meter_8: dataEntry.THD_V1_meter_8,
-    THD_V2_meter_8: dataEntry.THD_V2_meter_8,
-    THD_V3_meter_8: dataEntry.THD_V3_meter_8,
-    THD_I1_meter_8: dataEntry.THD_I1_meter_8,
-    THD_I2_meter_8: dataEntry.THD_I2_meter_8,
-    THD_I3_meter_8: dataEntry.THD_I3_meter_8,
-
+    
     //Meter 9
     meter_9: dataEntry.meter_9,
     Voltage_V1N_meter_9: dataEntry.Voltage_V1N_meter_9,
@@ -1711,13 +1817,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_9: dataEntry.TotalNet_KVAH_meter_9,
     TotalNet_KVARH_meter_9: dataEntry.TotalNet_KVARH_meter_9,
     Neutral_Current_meter_9: dataEntry.Neutral_Current_meter_9,
-    THD_V1_meter_9: dataEntry.THD_V1_meter_9,
-    THD_V2_meter_9: dataEntry.THD_V2_meter_9,
-    THD_V3_meter_9: dataEntry.THD_V3_meter_9,
-    THD_I1_meter_9: dataEntry.THD_I1_meter_9,
-    THD_I2_meter_9: dataEntry.THD_I2_meter_9,
-    THD_I3_meter_9: dataEntry.THD_I3_meter_9,
-
+    
     // Meter 10
     meter_10: dataEntry.meter_10,
     Voltage_V1N_meter_10: dataEntry.Voltage_V1N_meter_10,
@@ -1738,13 +1838,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_10: dataEntry.TotalNet_KVAH_meter_10,
     TotalNet_KVARH_meter_10: dataEntry.TotalNet_KVARH_meter_10,
     Neutral_Current_meter_10: dataEntry.Neutral_Current_meter_10,
-    THD_V1_meter_10: dataEntry.THD_V1_meter_10,
-    THD_V2_meter_10: dataEntry.THD_V2_meter_10,
-    THD_V3_meter_10: dataEntry.THD_V3_meter_10,
-    THD_I1_meter_10: dataEntry.THD_I1_meter_10,
-    THD_I2_meter_10: dataEntry.THD_I2_meter_10,
-    THD_I3_meter_10: dataEntry.THD_I3_meter_10,
-
+    
     // Meter 11
     meter_11: dataEntry.meter_11,
     Voltage_V1N_meter_11: dataEntry.Voltage_V1N_meter_11,
@@ -1765,13 +1859,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_11: dataEntry.TotalNet_KVAH_meter_11,
     TotalNet_KVARH_meter_11: dataEntry.TotalNet_KVARH_meter_11,
     Neutral_Current_meter_11: dataEntry.Neutral_Current_meter_11,
-    THD_V1_meter_11: dataEntry.THD_V1_meter_11,
-    THD_V2_meter_11: dataEntry.THD_V2_meter_11,
-    THD_V3_meter_11: dataEntry.THD_V3_meter_11,
-    THD_I1_meter_11: dataEntry.THD_I1_meter_11,
-    THD_I2_meter_11: dataEntry.THD_I2_meter_11,
-    THD_I3_meter_11: dataEntry.THD_I3_meter_11,
-
+    
     // Meter 12
     meter_12: dataEntry.meter_12,
     Voltage_V1N_meter_12: dataEntry.Voltage_V1N_meter_12,
@@ -1792,13 +1880,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_12: dataEntry.TotalNet_KVAH_meter_12,
     TotalNet_KVARH_meter_12: dataEntry.TotalNet_KVARH_meter_12,
     Neutral_Current_meter_12: dataEntry.Neutral_Current_meter_12,
-    THD_V1_meter_12: dataEntry.THD_V1_meter_12,
-    THD_V2_meter_12: dataEntry.THD_V2_meter_12,
-    THD_V3_meter_12: dataEntry.THD_V3_meter_12,
-    THD_I1_meter_12: dataEntry.THD_I1_meter_12,
-    THD_I2_meter_12: dataEntry.THD_I2_meter_12,
-    THD_I3_meter_12: dataEntry.THD_I3_meter_12,
-
+    
     // Meter 13
     meter_13: dataEntry.meter_13,
     Voltage_V1N_meter_13: dataEntry.Voltage_V1N_meter_13,
@@ -1819,12 +1901,6 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_13: dataEntry.TotalNet_KVAH_meter_13,
     TotalNet_KVARH_meter_13: dataEntry.TotalNet_KVARH_meter_13,
     Neutral_Current_meter_13: dataEntry.Neutral_Current_meter_13,
-    THD_V1_meter_13: dataEntry.THD_V1_meter_13,
-    THD_V2_meter_13: dataEntry.THD_V2_meter_13,
-    THD_V3_meter_13: dataEntry.THD_V3_meter_13,
-    THD_I1_meter_13: dataEntry.THD_I1_meter_13,
-    THD_I2_meter_13: dataEntry.THD_I2_meter_13,
-    THD_I3_meter_13: dataEntry.THD_I3_meter_13,
 
     // Meter 14
     meter_14: dataEntry.meter_14,
@@ -1846,13 +1922,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_14: dataEntry.TotalNet_KVAH_meter_14,
     TotalNet_KVARH_meter_14: dataEntry.TotalNet_KVARH_meter_14,
     Neutral_Current_meter_14: dataEntry.Neutral_Current_meter_14,
-    THD_V1_meter_14: dataEntry.THD_V1_meter_14,
-    THD_V2_meter_14: dataEntry.THD_V2_meter_14,
-    THD_V3_meter_14: dataEntry.THD_V3_meter_14,
-    THD_I1_meter_14: dataEntry.THD_I1_meter_14,
-    THD_I2_meter_14: dataEntry.THD_I2_meter_14,
-    THD_I3_meter_14: dataEntry.THD_I3_meter_14,
-
+   
     // meter 15
     meter_15: dataEntry.meter_15,
     Voltage_V1N_meter_15: dataEntry.Voltage_V1N_meter_15,
@@ -1873,13 +1943,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_15: dataEntry.TotalNet_KVAH_meter_15,
     TotalNet_KVARH_meter_15: dataEntry.TotalNet_KVARH_meter_15,
     Neutral_Current_meter_15: dataEntry.Neutral_Current_meter_15,
-    THD_V1_meter_15: dataEntry.THD_V1_meter_15,
-    THD_V2_meter_15: dataEntry.THD_V2_meter_15,
-    THD_V3_meter_15: dataEntry.THD_V3_meter_15,
-    THD_I1_meter_15: dataEntry.THD_I1_meter_15,
-    THD_I2_meter_15: dataEntry.THD_I2_meter_15,
-    THD_I3_meter_15: dataEntry.THD_I3_meter_15,
-
+   
     // meter 16
     meter_16: dataEntry.meter_16,
     Voltage_V1N_meter_16: dataEntry.Voltage_V1N_meter_16,
@@ -1900,13 +1964,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_16: dataEntry.TotalNet_KVAH_meter_16,
     TotalNet_KVARH_meter_16: dataEntry.TotalNet_KVARH_meter_16,
     Neutral_Current_meter_16: dataEntry.Neutral_Current_meter_16,
-    THD_V1_meter_16: dataEntry.THD_V1_meter_16,
-    THD_V2_meter_16: dataEntry.THD_V2_meter_16,
-    THD_V3_meter_16: dataEntry.THD_V3_meter_16,
-    THD_I1_meter_16: dataEntry.THD_I1_meter_16,
-    THD_I2_meter_16: dataEntry.THD_I2_meter_16,
-    THD_I3_meter_16: dataEntry.THD_I3_meter_16,
-
+   
     // meter 17
     meter_17: dataEntry.meter_17,
     Voltage_V1N_meter_17: dataEntry.Voltage_V1N_meter_17,
@@ -1927,13 +1985,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_17: dataEntry.TotalNet_KVAH_meter_17,
     TotalNet_KVARH_meter_17: dataEntry.TotalNet_KVARH_meter_17,
     Neutral_Current_meter_17: dataEntry.Neutral_Current_meter_17,
-    THD_V1_meter_17: dataEntry.THD_V1_meter_17,
-    THD_V2_meter_17: dataEntry.THD_V2_meter_17,
-    THD_V3_meter_17: dataEntry.THD_V3_meter_17,
-    THD_I1_meter_17: dataEntry.THD_I1_meter_17,
-    THD_I2_meter_17: dataEntry.THD_I2_meter_17,
-    THD_I3_meter_17: dataEntry.THD_I3_meter_17,
-
+    
     // meter 18
     meter_18: dataEntry.meter_18,
     Voltage_V1N_meter_18: dataEntry.Voltage_V1N_meter_18,
@@ -1954,13 +2006,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_18: dataEntry.TotalNet_KVAH_meter_18,
     TotalNet_KVARH_meter_18: dataEntry.TotalNet_KVARH_meter_18,
     Neutral_Current_meter_18: dataEntry.Neutral_Current_meter_18,
-    THD_V1_meter_18: dataEntry.THD_V1_meter_18,
-    THD_V2_meter_18: dataEntry.THD_V2_meter_18,
-    THD_V3_meter_18: dataEntry.THD_V3_meter_18,
-    THD_I1_meter_18: dataEntry.THD_I1_meter_18,
-    THD_I2_meter_18: dataEntry.THD_I2_meter_18,
-    THD_I3_meter_18: dataEntry.THD_I3_meter_18,
-
+    
     // meter 19
     meter_19: dataEntry.meter_19,
     Voltage_V1N_meter_19: dataEntry.Voltage_V1N_meter_19,
@@ -1981,12 +2027,6 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_19: dataEntry.TotalNet_KVAH_meter_19,
     TotalNet_KVARH_meter_19: dataEntry.TotalNet_KVARH_meter_19,
     Neutral_Current_meter_19: dataEntry.Neutral_Current_meter_19,
-    THD_V1_meter_19: dataEntry.THD_V1_meter_19,
-    THD_V2_meter_19: dataEntry.THD_V2_meter_19,
-    THD_V3_meter_19: dataEntry.THD_V3_meter_19,
-    THD_I1_meter_19: dataEntry.THD_I1_meter_19,
-    THD_I2_meter_19: dataEntry.THD_I2_meter_19,
-    THD_I3_meter_19: dataEntry.THD_I3_meter_19,
 
     // meter 20
     meter_20: dataEntry.meter_20,
@@ -2008,13 +2048,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_20: dataEntry.TotalNet_KVAH_meter_20,
     TotalNet_KVARH_meter_20: dataEntry.TotalNet_KVARH_meter_20,
     Neutral_Current_meter_20: dataEntry.Neutral_Current_meter_20,
-    THD_V1_meter_20: dataEntry.THD_V1_meter_20,
-    THD_V2_meter_20: dataEntry.THD_V2_meter_20,
-    THD_V3_meter_20: dataEntry.THD_V3_meter_20,
-    THD_I1_meter_20: dataEntry.THD_I1_meter_20,
-    THD_I2_meter_20: dataEntry.THD_I2_meter_20,
-    THD_I3_meter_20: dataEntry.THD_I3_meter_20,
-
+    
     // meter 21
     meter_21: dataEntry.meter_21,
     Voltage_V1N_meter_21: dataEntry.Voltage_V1N_meter_21,
@@ -2035,13 +2069,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_21: dataEntry.TotalNet_KVAH_meter_21,
     TotalNet_KVARH_meter_21: dataEntry.TotalNet_KVARH_meter_21,
     Neutral_Current_meter_21: dataEntry.Neutral_Current_meter_21,
-    THD_V1_meter_21: dataEntry.THD_V1_meter_21,
-    THD_V2_meter_21: dataEntry.THD_V2_meter_21,
-    THD_V3_meter_21: dataEntry.THD_V3_meter_21,
-    THD_I1_meter_21: dataEntry.THD_I1_meter_21,
-    THD_I2_meter_21: dataEntry.THD_I2_meter_21,
-    THD_I3_meter_21: dataEntry.THD_I3_meter_21,
-
+    
     // meter 22
     meter_22: dataEntry.meter_22,
     Voltage_V1N_meter_22: dataEntry.Voltage_V1N_meter_22,
@@ -2062,13 +2090,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_22: dataEntry.TotalNet_KVAH_meter_22,
     TotalNet_KVARH_meter_22: dataEntry.TotalNet_KVARH_meter_22,
     Neutral_Current_meter_22: dataEntry.Neutral_Current_meter_22,
-    THD_V1_meter_22: dataEntry.THD_V1_meter_22,
-    THD_V2_meter_22: dataEntry.THD_V2_meter_22,
-    THD_V3_meter_22: dataEntry.THD_V3_meter_22,
-    THD_I1_meter_22: dataEntry.THD_I1_meter_22,
-    THD_I2_meter_22: dataEntry.THD_I2_meter_22,
-    THD_I3_meter_22: dataEntry.THD_I3_meter_22,
-
+    
     // meter 23
     meter_23: dataEntry.meter_23,
     Voltage_V1N_meter_23: dataEntry.Voltage_V1N_meter_23,
@@ -2089,13 +2111,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_23: dataEntry.TotalNet_KVAH_meter_23,
     TotalNet_KVARH_meter_23: dataEntry.TotalNet_KVARH_meter_23,
     Neutral_Current_meter_23: dataEntry.Neutral_Current_meter_23,
-    THD_V1_meter_23: dataEntry.THD_V1_meter_23,
-    THD_V2_meter_23: dataEntry.THD_V2_meter_23,
-    THD_V3_meter_23: dataEntry.THD_V3_meter_23,
-    THD_I1_meter_23: dataEntry.THD_I1_meter_23,
-    THD_I2_meter_23: dataEntry.THD_I2_meter_23,
-    THD_I3_meter_23: dataEntry.THD_I3_meter_23,
-
+    
     // meter 24
     meter_24: dataEntry.meter_24,
     Voltage_V1N_meter_24: dataEntry.Voltage_V1N_meter_24,
@@ -2116,13 +2132,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_24: dataEntry.TotalNet_KVAH_meter_24,
     TotalNet_KVARH_meter_24: dataEntry.TotalNet_KVARH_meter_24,
     Neutral_Current_meter_24: dataEntry.Neutral_Current_meter_24,
-    THD_V1_meter_24: dataEntry.THD_V1_meter_24,
-    THD_V2_meter_24: dataEntry.THD_V2_meter_24,
-    THD_V3_meter_24: dataEntry.THD_V3_meter_24,
-    THD_I1_meter_24: dataEntry.THD_I1_meter_24,
-    THD_I2_meter_24: dataEntry.THD_I2_meter_24,
-    THD_I3_meter_24: dataEntry.THD_I3_meter_24,
-
+    
     // meter 25
     meter_25: dataEntry.meter_25,
     Voltage_V1N_meter_25: dataEntry.Voltage_V1N_meter_25,
@@ -2143,13 +2153,7 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_25: dataEntry.TotalNet_KVAH_meter_25,
     TotalNet_KVARH_meter_25: dataEntry.TotalNet_KVARH_meter_25,
     Neutral_Current_meter_25: dataEntry.Neutral_Current_meter_25,
-    THD_V1_meter_25: dataEntry.THD_V1_meter_25,
-    THD_V2_meter_25: dataEntry.THD_V2_meter_25,
-    THD_V3_meter_25: dataEntry.THD_V3_meter_25,
-    THD_I1_meter_25: dataEntry.THD_I1_meter_25,
-    THD_I2_meter_25: dataEntry.THD_I2_meter_25,
-    THD_I3_meter_25: dataEntry.THD_I3_meter_25,
-
+   
     // meter 26
     meter_26: dataEntry.meter_26,
     Voltage_V1N_meter_26: dataEntry.Voltage_V1N_meter_26,
@@ -2170,12 +2174,238 @@ const getdataHandler = async (req, res, next) => {
     TotalNet_KVAH_meter_26: dataEntry.TotalNet_KVAH_meter_26,
     TotalNet_KVARH_meter_26: dataEntry.TotalNet_KVARH_meter_26,
     Neutral_Current_meter_26: dataEntry.Neutral_Current_meter_26,
-    THD_V1_meter_26: dataEntry.THD_V1_meter_26,
-    THD_V2_meter_26: dataEntry.THD_V2_meter_26,
-    THD_V3_meter_26: dataEntry.THD_V3_meter_26,
-    THD_I1_meter_26: dataEntry.THD_I1_meter_26,
-    THD_I2_meter_26: dataEntry.THD_I2_meter_26,
-    THD_I3_meter_26: dataEntry.THD_I3_meter_26,
+    
+        // Meter 27
+    meter_27: dataEntry.meter_27,
+    Voltage_V1N_meter_27: dataEntry.Voltage_V1N_meter_27,
+    Voltage_V2N_meter_27: dataEntry.Voltage_V2N_meter_27,
+    Voltage_V3N_meter_27: dataEntry.Voltage_V3N_meter_27,
+    Voltage_V12_meter_27: dataEntry.Voltage_V12_meter_27,
+    Voltage_V23_meter_27: dataEntry.Voltage_V23_meter_27,
+    Voltage_V31_meter_27: dataEntry.Voltage_V31_meter_27,
+    Current_I1_meter_27: dataEntry.Current_I1_meter_27,
+    Current_I2_meter_27: dataEntry.Current_I2_meter_27,
+    Current_I3_meter_27: dataEntry.Current_I3_meter_27,
+    Total_KW_meter_27: dataEntry.Total_KW_meter_27,
+    Total_KVA_meter_27: dataEntry.Total_KVA_meter_27,
+    Total_KVAR_meter_27: dataEntry.Total_KVAR_meter_27,
+    Avg_PF_meter_27: dataEntry.Avg_PF_meter_27,
+    Frequency_meter_27: dataEntry.Frequency_meter_27,
+    TotalNet_KWH_meter_27: dataEntry.TotalNet_KWH_meter_27,
+    TotalNet_KVAH_meter_27: dataEntry.TotalNet_KVAH_meter_27,
+    TotalNet_KVARH_meter_27: dataEntry.TotalNet_KVARH_meter_27,
+    Neutral_Current_meter_27: dataEntry.Neutral_Current_meter_27,
+
+    // Meter 28
+    meter_28: dataEntry.meter_28,
+    Voltage_V1N_meter_28: dataEntry.Voltage_V1N_meter_28,
+    Voltage_V2N_meter_28: dataEntry.Voltage_V2N_meter_28,
+    Voltage_V3N_meter_28: dataEntry.Voltage_V3N_meter_28,
+    Voltage_V12_meter_28: dataEntry.Voltage_V12_meter_28,
+    Voltage_V23_meter_28: dataEntry.Voltage_V23_meter_28,
+    Voltage_V31_meter_28: dataEntry.Voltage_V31_meter_28,
+    Current_I1_meter_28: dataEntry.Current_I1_meter_28,
+    Current_I2_meter_28: dataEntry.Current_I2_meter_28,
+    Current_I3_meter_28: dataEntry.Current_I3_meter_28,
+    Total_KW_meter_28: dataEntry.Total_KW_meter_28,
+    Total_KVA_meter_28: dataEntry.Total_KVA_meter_28,
+    Total_KVAR_meter_28: dataEntry.Total_KVAR_meter_28,
+    Avg_PF_meter_28: dataEntry.Avg_PF_meter_28,
+    Frequency_meter_28: dataEntry.Frequency_meter_28,
+    TotalNet_KWH_meter_28: dataEntry.TotalNet_KWH_meter_28,
+    TotalNet_KVAH_meter_28: dataEntry.TotalNet_KVAH_meter_28,
+    TotalNet_KVARH_meter_28: dataEntry.TotalNet_KVARH_meter_28,
+    Neutral_Current_meter_28: dataEntry.Neutral_Current_meter_28,
+
+    // Meter 29
+    meter_29: dataEntry.meter_29,
+    Voltage_V1N_meter_29: dataEntry.Voltage_V1N_meter_29,
+    Voltage_V2N_meter_29: dataEntry.Voltage_V2N_meter_29,
+    Voltage_V3N_meter_29: dataEntry.Voltage_V3N_meter_29,
+    Voltage_V12_meter_29: dataEntry.Voltage_V12_meter_29,
+    Voltage_V23_meter_29: dataEntry.Voltage_V23_meter_29,
+    Voltage_V31_meter_29: dataEntry.Voltage_V31_meter_29,
+    Current_I1_meter_29: dataEntry.Current_I1_meter_29,
+    Current_I2_meter_29: dataEntry.Current_I2_meter_29,
+    Current_I3_meter_29: dataEntry.Current_I3_meter_29,
+    Total_KW_meter_29: dataEntry.Total_KW_meter_29,
+    Total_KVA_meter_29: dataEntry.Total_KVA_meter_29,
+    Total_KVAR_meter_29: dataEntry.Total_KVAR_meter_29,
+    Avg_PF_meter_29: dataEntry.Avg_PF_meter_29,
+    Frequency_meter_29: dataEntry.Frequency_meter_29,
+    TotalNet_KWH_meter_29: dataEntry.TotalNet_KWH_meter_29,
+    TotalNet_KVAH_meter_29: dataEntry.TotalNet_KVAH_meter_29,
+    TotalNet_KVARH_meter_29: dataEntry.TotalNet_KVARH_meter_29,
+    Neutral_Current_meter_29: dataEntry.Neutral_Current_meter_29,
+
+    // Meter 30
+    meter_30: dataEntry.meter_30,
+    Voltage_V1N_meter_30: dataEntry.Voltage_V1N_meter_30,
+    Voltage_V2N_meter_30: dataEntry.Voltage_V2N_meter_30,
+    Voltage_V3N_meter_30: dataEntry.Voltage_V3N_meter_30,
+    Voltage_V12_meter_30: dataEntry.Voltage_V12_meter_30,
+    Voltage_V23_meter_30: dataEntry.Voltage_V23_meter_30,
+    Voltage_V31_meter_30: dataEntry.Voltage_V31_meter_30,
+    Current_I1_meter_30: dataEntry.Current_I1_meter_30,
+    Current_I2_meter_30: dataEntry.Current_I2_meter_30,
+    Current_I3_meter_30: dataEntry.Current_I3_meter_30,
+    Total_KW_meter_30: dataEntry.Total_KW_meter_30,
+    Total_KVA_meter_30: dataEntry.Total_KVA_meter_30,
+    Total_KVAR_meter_30: dataEntry.Total_KVAR_meter_30,
+    Avg_PF_meter_30: dataEntry.Avg_PF_meter_30,
+    Frequency_meter_30: dataEntry.Frequency_meter_30,
+    TotalNet_KWH_meter_30: dataEntry.TotalNet_KWH_meter_30,
+    TotalNet_KVAH_meter_30: dataEntry.TotalNet_KVAH_meter_30,
+    TotalNet_KVARH_meter_30: dataEntry.TotalNet_KVARH_meter_30,
+    Neutral_Current_meter_30: dataEntry.Neutral_Current_meter_30,
+
+    // Meter 31
+    meter_31: dataEntry.meter_31,
+    Voltage_V1N_meter_31: dataEntry.Voltage_V1N_meter_31,
+    Voltage_V2N_meter_31: dataEntry.Voltage_V2N_meter_31,
+    Voltage_V3N_meter_31: dataEntry.Voltage_V3N_meter_31,
+    Voltage_V12_meter_31: dataEntry.Voltage_V12_meter_31,
+    Voltage_V23_meter_31: dataEntry.Voltage_V23_meter_31,
+    Voltage_V31_meter_31: dataEntry.Voltage_V31_meter_31,
+    Current_I1_meter_31: dataEntry.Current_I1_meter_31,
+    Current_I2_meter_31: dataEntry.Current_I2_meter_31,
+    Current_I3_meter_31: dataEntry.Current_I3_meter_31,
+    Total_KW_meter_31: dataEntry.Total_KW_meter_31,
+    Total_KVA_meter_31: dataEntry.Total_KVA_meter_31,
+    Total_KVAR_meter_31: dataEntry.Total_KVAR_meter_31,
+    Avg_PF_meter_31: dataEntry.Avg_PF_meter_31,
+    Frequency_meter_31: dataEntry.Frequency_meter_31,
+    TotalNet_KWH_meter_31: dataEntry.TotalNet_KWH_meter_31,
+    TotalNet_KVAH_meter_31: dataEntry.TotalNet_KVAH_meter_31,
+    TotalNet_KVARH_meter_31: dataEntry.TotalNet_KVARH_meter_31,
+    Neutral_Current_meter_31: dataEntry.Neutral_Current_meter_31,
+
+    // Meter 32
+    meter_32: dataEntry.meter_32,
+    Voltage_V1N_meter_32: dataEntry.Voltage_V1N_meter_32,
+    Voltage_V2N_meter_32: dataEntry.Voltage_V2N_meter_32,
+    Voltage_V3N_meter_32: dataEntry.Voltage_V3N_meter_32,
+    Voltage_V12_meter_32: dataEntry.Voltage_V12_meter_32,
+    Voltage_V23_meter_32: dataEntry.Voltage_V23_meter_32,
+    Voltage_V31_meter_32: dataEntry.Voltage_V31_meter_32,
+    Current_I1_meter_32: dataEntry.Current_I1_meter_32,
+    Current_I2_meter_32: dataEntry.Current_I2_meter_32,
+    Current_I3_meter_32: dataEntry.Current_I3_meter_32,
+    Total_KW_meter_32: dataEntry.Total_KW_meter_32,
+    Total_KVA_meter_32: dataEntry.Total_KVA_meter_32,
+    Total_KVAR_meter_32: dataEntry.Total_KVAR_meter_32,
+    Avg_PF_meter_32: dataEntry.Avg_PF_meter_32,
+    Frequency_meter_32: dataEntry.Frequency_meter_32,
+    TotalNet_KWH_meter_32: dataEntry.TotalNet_KWH_meter_32,
+    TotalNet_KVAH_meter_32: dataEntry.TotalNet_KVAH_meter_32,
+    TotalNet_KVARH_meter_32: dataEntry.TotalNet_KVARH_meter_32,
+    Neutral_Current_meter_32: dataEntry.Neutral_Current_meter_32,
+
+    // Meter 33
+    meter_33: dataEntry.meter_33,
+    Voltage_V1N_meter_33: dataEntry.Voltage_V1N_meter_33,
+    Voltage_V2N_meter_33: dataEntry.Voltage_V2N_meter_33,
+    Voltage_V3N_meter_33: dataEntry.Voltage_V3N_meter_33,
+    Voltage_V12_meter_33: dataEntry.Voltage_V12_meter_33,
+    Voltage_V23_meter_33: dataEntry.Voltage_V23_meter_33,
+    Voltage_V31_meter_33: dataEntry.Voltage_V31_meter_33,
+    Current_I1_meter_33: dataEntry.Current_I1_meter_33,
+    Current_I2_meter_33: dataEntry.Current_I2_meter_33,
+    Current_I3_meter_33: dataEntry.Current_I3_meter_33,
+    Total_KW_meter_33: dataEntry.Total_KW_meter_33,
+    Total_KVA_meter_33: dataEntry.Total_KVA_meter_33,
+    Total_KVAR_meter_33: dataEntry.Total_KVAR_meter_33,
+    Avg_PF_meter_33: dataEntry.Avg_PF_meter_33,
+    Frequency_meter_33: dataEntry.Frequency_meter_33,
+    TotalNet_KWH_meter_33: dataEntry.TotalNet_KWH_meter_33,
+    TotalNet_KVAH_meter_33: dataEntry.TotalNet_KVAH_meter_33,
+    TotalNet_KVARH_meter_33: dataEntry.TotalNet_KVARH_meter_33,
+    Neutral_Current_meter_33: dataEntry.Neutral_Current_meter_33,
+
+    // Meter 34
+    meter_34: dataEntry.meter_34,
+    Voltage_V1N_meter_34: dataEntry.Voltage_V1N_meter_34,
+    Voltage_V2N_meter_34: dataEntry.Voltage_V2N_meter_34,
+    Voltage_V3N_meter_34: dataEntry.Voltage_V3N_meter_34,
+    Voltage_V12_meter_34: dataEntry.Voltage_V12_meter_34,
+    Voltage_V23_meter_34: dataEntry.Voltage_V23_meter_34,
+    Voltage_V31_meter_34: dataEntry.Voltage_V31_meter_34,
+    Current_I1_meter_34: dataEntry.Current_I1_meter_34,
+    Current_I2_meter_34: dataEntry.Current_I2_meter_34,
+    Current_I3_meter_34: dataEntry.Current_I3_meter_34,
+    Total_KW_meter_34: dataEntry.Total_KW_meter_34,
+    Total_KVA_meter_34: dataEntry.Total_KVA_meter_34,
+    Total_KVAR_meter_34: dataEntry.Total_KVAR_meter_34,
+    Avg_PF_meter_34: dataEntry.Avg_PF_meter_34,
+    Frequency_meter_34: dataEntry.Frequency_meter_34,
+    TotalNet_KWH_meter_34: dataEntry.TotalNet_KWH_meter_34,
+    TotalNet_KVAH_meter_34: dataEntry.TotalNet_KVAH_meter_34,
+    TotalNet_KVARH_meter_34: dataEntry.TotalNet_KVARH_meter_34,
+    Neutral_Current_meter_34: dataEntry.Neutral_Current_meter_34,
+
+    // Meter 35
+    meter_35: dataEntry.meter_35,
+    Voltage_V1N_meter_35: dataEntry.Voltage_V1N_meter_35,
+    Voltage_V2N_meter_35: dataEntry.Voltage_V2N_meter_35,
+    Voltage_V3N_meter_35: dataEntry.Voltage_V3N_meter_35,
+    Voltage_V12_meter_35: dataEntry.Voltage_V12_meter_35,
+    Voltage_V23_meter_35: dataEntry.Voltage_V23_meter_35,
+    Voltage_V31_meter_35: dataEntry.Voltage_V31_meter_35,
+    Current_I1_meter_35: dataEntry.Current_I1_meter_35,
+    Current_I2_meter_35: dataEntry.Current_I2_meter_35,
+    Current_I3_meter_35: dataEntry.Current_I3_meter_35,
+    Total_KW_meter_35: dataEntry.Total_KW_meter_35,
+    Total_KVA_meter_35: dataEntry.Total_KVA_meter_35,
+    Total_KVAR_meter_35: dataEntry.Total_KVAR_meter_35,
+    Avg_PF_meter_35: dataEntry.Avg_PF_meter_35,
+    Frequency_meter_35: dataEntry.Frequency_meter_35,
+    TotalNet_KWH_meter_35: dataEntry.TotalNet_KWH_meter_35,
+    TotalNet_KVAH_meter_35: dataEntry.TotalNet_KVAH_meter_35,
+    TotalNet_KVARH_meter_35: dataEntry.TotalNet_KVARH_meter_35,
+    Neutral_Current_meter_35: dataEntry.Neutral_Current_meter_35,
+
+    // Meter 36
+    meter_36: dataEntry.meter_36,
+    Voltage_V1N_meter_36: dataEntry.Voltage_V1N_meter_36,
+    Voltage_V2N_meter_36: dataEntry.Voltage_V2N_meter_36,
+    Voltage_V3N_meter_36: dataEntry.Voltage_V3N_meter_36,
+    Voltage_V12_meter_36: dataEntry.Voltage_V12_meter_36,
+    Voltage_V23_meter_36: dataEntry.Voltage_V23_meter_36,
+    Voltage_V31_meter_36: dataEntry.Voltage_V31_meter_36,
+    Current_I1_meter_36: dataEntry.Current_I1_meter_36,
+    Current_I2_meter_36: dataEntry.Current_I2_meter_36,
+    Current_I3_meter_36: dataEntry.Current_I3_meter_36,
+    Total_KW_meter_36: dataEntry.Total_KW_meter_36,
+    Total_KVA_meter_36: dataEntry.Total_KVA_meter_36,
+    Total_KVAR_meter_36: dataEntry.Total_KVAR_meter_36,
+    Avg_PF_meter_36: dataEntry.Avg_PF_meter_36,
+    Frequency_meter_36: dataEntry.Frequency_meter_36,
+    TotalNet_KWH_meter_36: dataEntry.TotalNet_KWH_meter_36,
+    TotalNet_KVAH_meter_36: dataEntry.TotalNet_KVAH_meter_36,
+    TotalNet_KVARH_meter_36: dataEntry.TotalNet_KVARH_meter_36,
+    Neutral_Current_meter_36: dataEntry.Neutral_Current_meter_36,
+
+    // Meter 37
+    meter_37: dataEntry.meter_37,
+    Voltage_V1N_meter_37: dataEntry.Voltage_V1N_meter_37,
+    Voltage_V2N_meter_37: dataEntry.Voltage_V2N_meter_37,
+    Voltage_V3N_meter_37: dataEntry.Voltage_V3N_meter_37,
+    Voltage_V12_meter_37: dataEntry.Voltage_V12_meter_37,
+    Voltage_V23_meter_37: dataEntry.Voltage_V23_meter_37,
+    Voltage_V31_meter_37: dataEntry.Voltage_V31_meter_37,
+    Current_I1_meter_37: dataEntry.Current_I1_meter_37,
+    Current_I2_meter_37: dataEntry.Current_I2_meter_37,
+    Current_I3_meter_37: dataEntry.Current_I3_meter_37,
+    Total_KW_meter_37: dataEntry.Total_KW_meter_37,
+    Total_KVA_meter_37: dataEntry.Total_KVA_meter_37,
+    Total_KVAR_meter_37: dataEntry.Total_KVAR_meter_37,
+    Avg_PF_meter_37: dataEntry.Avg_PF_meter_37,
+    Frequency_meter_37: dataEntry.Frequency_meter_37,
+    TotalNet_KWH_meter_37: dataEntry.TotalNet_KWH_meter_37,
+    TotalNet_KVAH_meter_37: dataEntry.TotalNet_KVAH_meter_37,
+    TotalNet_KVARH_meter_37: dataEntry.TotalNet_KVARH_meter_37,
+    Neutral_Current_meter_37: dataEntry.Neutral_Current_meter_37,
+
   }));
 
   return res.status(200).json(data);
