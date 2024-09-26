@@ -12,6 +12,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", sensorDataRoutes);
 
+app.get("/",(req,res)=>{
+  res.send("Welcome")
+})
+
 const port = process.env.PORT || 4000;
 mongoose.set('strictQuery', false);
 mongoose
