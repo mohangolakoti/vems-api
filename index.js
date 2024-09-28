@@ -10,11 +10,12 @@ dotEnv.config()
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/api", sensorDataRoutes);
 
-app.get("/",(req,res)=>{
+app.use("/",(req,res)=>{
   res.send("Welcome")
 })
+
+app.use("/api", sensorDataRoutes);
 
 const port = process.env.PORT || 4000;
 mongoose.set('strictQuery', false);
@@ -22,7 +23,7 @@ mongoose
   .connect(process.env.MONGO_URL)
 
   .then(() => {
-    console.log("Server Running...");
+    console.log("Server Running on", port);
     app.listen(port)
   }).catch((err) => {
     console.log(err);
