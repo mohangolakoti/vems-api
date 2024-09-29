@@ -11,10 +11,6 @@ dotEnv.config()
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/",(req,res)=>{
-  res.send("Welcome")
-})
-
 app.use("/api", sensorDataRoutes);
 
 const port = process.env.PORT || 4000;
