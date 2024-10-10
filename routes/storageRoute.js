@@ -1,14 +1,15 @@
 const express = require("express");
-const contoller = require('../controllers/storageController');
+const controller = require('../controllers/storageController');
 
 const router = express.Router();
 
-router.get('/sensordata', contoller.sensorData);
-router.get('/previousDayEnergy',contoller.prevDayEnergy);
-router.get('/energy-consumption', contoller.energyConsumption);
-router.get('/realtime-graph',contoller.realTimeGraph)
-router.get('/daywise-graph/:date',contoller.dailyWiseGraph)
-router.get('/highest-kva', contoller.getHighestKva);
-router.get('/sensordatabydate/:date', contoller.sensorDataByDate);
+router.get('/sensordata', controller.sensorData);
+router.get('/previousDayEnergy',controller.prevDayEnergy);
+router.get('/energy-consumption', controller.energyConsumption);
+router.get('/realtime-graph',controller.realTimeGraph)
+router.get('/daywise-graph/:date',controller.dailyWiseGraph)
+router.get('/highest-kva', controller.getHighestKva);
+router.get('/sensordatabydate/:date', controller.sensorDataByDate);
+router.get('/monthly-energy', controller.getMonthlyEnergyConsumption)
 
 module.exports = router;
