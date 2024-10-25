@@ -219,31 +219,44 @@ const getMonthlyEnergyConsumption = async (req, res) => {
       // Calculate the first day of the current month
       const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
   
-      // Fetch the latest record for the current month
-      const latestData = await EnergyData.findOne({
-        timestamp: { $gte: startOfMonth }
-      }).sort({ timestamp: -1 });
+      // Aggregate the total energy consumption for each meter in the current month
+      const monthlyData = await EnergyData.aggregate([
+        {
+          $match: {
+            timestamp: { $gte: startOfMonth }
+          }
+        },
+        {
+          $group: {
+            _id: null,
+            totalEnergyConsumptionMeter70: { $sum: "$energy_consumption_meter_70" },
+            totalEnergyConsumptionMeter69: { $sum: "$energy_consumption_meter_69" },
+            totalEnergyConsumptionMeter40: { $sum: "$energy_consumption_meter_40" }
+          }
+        }
+      ]);
   
-      if (!latestData) {
+      if (monthlyData.length === 0) {
         return res.status(404).json({ error: "No data found for the current month" });
       }
   
-      // Calculate the sum of the three energy consumption fields
-      const totalEnergyConsumption = latestData.energy_consumption_meter_70 +
-                                     latestData.energy_consumption_meter_69 +
-                                     latestData.energy_consumption_meter_40;
+      // Calculate the overall total energy consumption for the month
+      const totalEnergyConsumption =
+        monthlyData[0].totalEnergyConsumptionMeter70 +
+        monthlyData[0].totalEnergyConsumptionMeter69 +
+        monthlyData[0].totalEnergyConsumptionMeter40;
   
       // Respond with the total energy consumption for the current month
       const response = {
-        latest_energy_consumption_meter_70: latestData.energy_consumption_meter_70,
-        latest_energy_consumption_meter_69: latestData.energy_consumption_meter_69,
-        latest_energy_consumption_meter_40: latestData.energy_consumption_meter_40,
+        totalEnergyConsumptionMeter70: monthlyData[0].totalEnergyConsumptionMeter70,
+        totalEnergyConsumptionMeter69: monthlyData[0].totalEnergyConsumptionMeter69,
+        totalEnergyConsumptionMeter40: monthlyData[0].totalEnergyConsumptionMeter40,
         totalEnergyConsumption
       };
   
       res.json(response);
     } catch (error) {
-      res.status(500).json({ error: "Error fetching latest energy consumption data" });
+      res.status(500).json({ error: "Error fetching monthly energy consumption data" });
     }
   };
   
