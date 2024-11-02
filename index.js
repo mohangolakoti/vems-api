@@ -90,7 +90,7 @@ async function initializeInitialEnergyValue() {
 async function fetchDataAndStore() {
   try {
     console.log("Fetching and storing sensor data...");
-    const response = await axios.get("https://vems-api-ov0x.onrender.com/api/sensordata");
+    const response = await axios.get("http://15.207.115.86:4000/api/sensordata");
     const newData = response.data[0];
 
     // If no initial energy value has been set, set it to the current values
