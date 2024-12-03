@@ -22,39 +22,48 @@ const sensorData = async (req, res) => {
 
 const energyConsumption = async (req, res) => {
     try {
-        const dates = [
-            subDays(new Date(), 6),
-            subDays(new Date(), 5),
-            subDays(new Date(), 4),
-            subDays(new Date(), 3),
-            subDays(new Date(), 2),
-            subDays(new Date(), 1),
-            new Date()
-        ];
+        const dates = Array.from({ length: 7 }, (_, i) =>
+            subDays(new Date(), 6 - i)
+        );
 
-        const queries = dates.map(date => ({
-            timestamp: {
-                $gte: startOfDay(date),
-                $lte: endOfDay(date)
-            }
-        }));
+        // Array to store energy data for each day
+        const energyData = await Promise.all(
+            dates.map(async (date) => {
+                const start = startOfDay(date);
+                const end = endOfDay(date);
 
-        const energyData = await EnergyData.find({ $or: queries })
-            .sort({ timestamp: -1 })
-            .limit(7)
-            .select('TotalNet_KWH_meter_1 timestamp');
+                // Find the most recent record for this day
+                const record = await EnergyData.findOne({
+                    timestamp: { $gte: start, $lte: end },
+                })
+                    .sort({ timestamp: -1 })
+                    .select(
+                        "TotalNet_KWH_meter_70 energy_consumption_meter_69 energy_consumption_meter_41 energy_consumption_meter_40 timestamp"
+                    );
 
-        const data = energyData.map(row => ({
-            date: format(row.timestamp, 'yyyy-MM-dd'),
-            energy: row.TotalNet_KWH_meter_1
-        }));
+                if (record) {
+                    return {
+                        date: format(record.timestamp, "yyyy-MM-dd"),
+                        energy:
+                            (record.energy_consumption_meter_70 || 0) +
+                            (record.energy_consumption_meter_69 || 0) +
+                            (record.energy_consumption_meter_41 || 0) +
+                            (record.energy_consumption_meter_40 || 0),
+                    };
+                } else {
+                    // No record found for this date
+                    return { date: format(date, "yyyy-MM-dd"), energy: 0 };
+                }
+            })
+        );
 
-        res.status(200).json(data);
+        res.status(200).json(energyData);
     } catch (error) {
         console.error("Error fetching energy values:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
 
 const realTimeGraph = async (req, res) => {
     const today = new Date();
