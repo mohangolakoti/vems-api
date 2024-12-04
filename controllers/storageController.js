@@ -85,16 +85,13 @@ const realTimeGraph = async (req, res) => {
 const dailyWiseGraph = async (req, res) => {
     const date = req.params.date;
 
-    // Convert to IST by adding 5 hours 30 minutes
+    // Convert to IST by adding 5 hours 30 minutes (19800 seconds) to the start and end of the day
     const startUTC = startOfDay(new Date(date));
     const endUTC = endOfDay(new Date(date));
 
-    const startIST = addSeconds(startUTC, 19800);
-    const endIST = addSeconds(endUTC, 19800);
-
     try {
         const data = await EnergyData.find({
-            timestamp: { $gte: startIST, $lte: endIST }
+            timestamp: { $gte: startUTC, $lte: endUTC }
         }).sort({ timestamp: 1 });
 
         res.json(data);
@@ -103,6 +100,7 @@ const dailyWiseGraph = async (req, res) => {
         res.status(500).send('Error fetching power data');
     }
 };
+
 
 const prevDayEnergy = async (req, res) => {
     try {
