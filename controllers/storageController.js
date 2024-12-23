@@ -2,14 +2,18 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { format, subDays, startOfDay, endOfDay, addSeconds } = require('date-fns');
+const { format, subDays, startOfDay, endOfDay, addSeconds,addDays } = require('date-fns');
+const fs = require('fs');
 const dotEnv = require('dotenv');
 dotEnv.config();
 const app = express();
 app.use(cors());
+const path = require('path')
 app.use(bodyParser.json());
-
-const EnergyData = require('../models/energyData'); // Assuming EnergyData model is exported correctly
+const { PythonShell } = require('python-shell');
+const { spawn } = require("child_process");
+const Prediction = require("../models/predictionData");
+const EnergyData = require('../models/energyData');
 
 const sensorData = async (req, res) => {
     try {
@@ -220,52 +224,186 @@ const sensorDataByDate = async (req, res) => {
 
 const getMonthlyEnergyConsumption = async (req, res) => {
     try {
-      // Get the current date
-      const currentDate = new Date();
-  
-      // Calculate the first day of the current month
-      const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-  
-      // Aggregate the total energy consumption for each meter in the current month
-      const monthlyData = await EnergyData.aggregate([
-        {
-          $match: {
-            timestamp: { $gte: startOfMonth }
-          }
-        },
-        {
-          $group: {
-            _id: null,
-            totalEnergyConsumptionMeter70: { $sum: "$energy_consumption_meter_70" },
-            totalEnergyConsumptionMeter69: { $sum: "$energy_consumption_meter_69" },
-            totalEnergyConsumptionMeter40: { $sum: "$energy_consumption_meter_40" }
-          }
+        // Get the current date
+        const currentDate = new Date();
+
+        // Calculate the first day of the current month
+        const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+
+        // Aggregate the sum of daily last stored values for each meter in the current month
+        const monthlyData = await EnergyData.aggregate([
+            {
+                $match: {
+                    timestamp: { $gte: startOfMonth }, // Match data from the start of the current month
+                },
+            },
+            {
+                $addFields: {
+                    date: {
+                        $dateToString: { format: "%Y-%m-%d", date: "$timestamp" }, // Extract the date part
+                    },
+                },
+            },
+            {
+                $sort: { timestamp: -1 }, // Sort by timestamp in descending order to get the last value first
+            },
+            {
+                $group: {
+                    _id: { date: "$date" }, // Group by date
+                    lastEnergyConsumptionMeter70: { $first: "$energy_consumption_meter_70" }, // Last value for meter 70
+                    lastEnergyConsumptionMeter69: { $first: "$energy_consumption_meter_69" }, // Last value for meter 69
+                    lastEnergyConsumptionMeter40: { $first: "$energy_consumption_meter_40" }, // Last value for meter 40
+                },
+            },
+            {
+                $group: {
+                    _id: null, // Group everything to calculate the total sum
+                    totalEnergyConsumptionMeter70: { $sum: "$lastEnergyConsumptionMeter70" }, // Sum last values for meter 70
+                    totalEnergyConsumptionMeter69: { $sum: "$lastEnergyConsumptionMeter69" }, // Sum last values for meter 69
+                    totalEnergyConsumptionMeter40: { $sum: "$lastEnergyConsumptionMeter40" }, // Sum last values for meter 40
+                },
+            },
+        ]);
+
+        if (monthlyData.length === 0) {
+            return res.status(404).json({ error: "No data found for the current month" });
         }
-      ]);
+
+        // Calculate the overall total energy consumption for the month
+        const totalEnergyConsumption =
+            monthlyData[0].totalEnergyConsumptionMeter70 +
+            monthlyData[0].totalEnergyConsumptionMeter69 +
+            monthlyData[0].totalEnergyConsumptionMeter40;
+
+        // Respond with the total energy consumption for the current month
+        const response = {
+            totalEnergyConsumptionMeter70: monthlyData[0].totalEnergyConsumptionMeter70,
+            totalEnergyConsumptionMeter69: monthlyData[0].totalEnergyConsumptionMeter69,
+            totalEnergyConsumptionMeter40: monthlyData[0].totalEnergyConsumptionMeter40,
+            totalEnergyConsumption,
+        };
+
+        res.json(response);
+    } catch (error) {
+        console.error("Error fetching monthly energy consumption data:", error);
+        res.status(500).json({ error: "Error fetching monthly energy consumption data" });
+    }
+};
+
+const predictions = async (req, res) => {
+    const currentDate = new Date().toISOString().split("T")[0];
+    const weekStartDate = new Date();
+    weekStartDate.setDate(weekStartDate.getDate() - (weekStartDate.getDay() || 7)); // Get start of the current week
+    const formattedWeekStartDate = weekStartDate.toISOString().split("T")[0];
   
-      if (monthlyData.length === 0) {
-        return res.status(404).json({ error: "No data found for the current month" });
+    try {
+      // Check if predictions already exist for this week
+      const existingPrediction = await Prediction.findOne({ weekStartDate: formattedWeekStartDate });
+  
+      if (existingPrediction) {
+        // Remove IDs from response
+        const sanitizedPredictions = existingPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
+          date,
+          predicted_units,
+        }));
+  
+        return res.json({
+          success: true,
+          message: "Predictions for this week are already stored.",
+          predictions: sanitizedPredictions,
+          nextMonthPrediction: existingPrediction.nextMonthPrediction,
+        });
       }
   
-      // Calculate the overall total energy consumption for the month
-      const totalEnergyConsumption =
-        monthlyData[0].totalEnergyConsumptionMeter70 +
-        monthlyData[0].totalEnergyConsumptionMeter69 +
-        monthlyData[0].totalEnergyConsumptionMeter40;
+      // Spawn the Python process
+      const pythonProcess = spawn("python", ["./controllers/predict.py", currentDate]);
   
-      // Respond with the total energy consumption for the current month
-      const response = {
-        totalEnergyConsumptionMeter70: monthlyData[0].totalEnergyConsumptionMeter70,
-        totalEnergyConsumptionMeter69: monthlyData[0].totalEnergyConsumptionMeter69,
-        totalEnergyConsumptionMeter40: monthlyData[0].totalEnergyConsumptionMeter40,
-        totalEnergyConsumption
-      };
+      let scriptOutput = "";
   
-      res.json(response);
+      // Accumulate output from the Python script
+      pythonProcess.stdout.on("data", (data) => {
+        scriptOutput += data.toString();
+      });
+  
+      // Handle errors from the Python script
+      pythonProcess.stderr.on("data", (data) => {
+        console.error("Python script error:", data.toString());
+      });
+  
+      // Handle when the Python process finishes
+      pythonProcess.on("close", async (code) => {
+        console.log(`Python script exited with code ${code}`);
+        if (code !== 0) {
+          return res.status(500).json({ error: "Python script execution failed" });
+        }
+  
+        try {
+          // Parse the JSON output from the Python script
+          const predictions = JSON.parse(scriptOutput.trim());
+  
+          // Validate the output
+          if (!predictions?.next_week_predictions || predictions.next_month_prediction === undefined) {
+            return res.status(400).json({ error: "Invalid predictions format" });
+          }
+  
+          // Create a new prediction document
+          const newPrediction = new Prediction({
+            weekStartDate: formattedWeekStartDate,
+            nextWeekPredictions: predictions.next_week_predictions,
+            nextMonthPrediction: predictions.next_month_prediction,
+          });
+  
+          // Save to MongoDB
+          const savedPrediction = await newPrediction.save();
+  
+          // Sanitize response by removing IDs
+          const sanitizedPredictions = savedPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
+            date,
+            predicted_units,
+          }));
+  
+          // Respond with the saved prediction
+          return res.json({
+            success: true,
+            predictions: sanitizedPredictions,
+            nextMonthPrediction: savedPrediction.nextMonthPrediction,
+          });
+        } catch (error) {
+          console.error("Error parsing or saving Python output:", error);
+          return res.status(500).json({ error: "Error processing predictions" });
+        }
+      });
     } catch (error) {
-      res.status(500).json({ error: "Error fetching monthly energy consumption data" });
+      console.error("Error checking existing predictions:", error);
+      return res.status(500).json({ error: "Error checking predictions" });
     }
   };
   
+const getLatestPrediction = async (req, res) => {
+    try {
+      // Fetch the latest prediction by sorting the collection based on the `createdAt` field
+      const latestPrediction = await Prediction.findOne().sort({ createdAt: -1 });
+  
+      if (!latestPrediction) {
+        return res.status(404).json({
+          success: false,
+          message: "No predictions found.",
+        });
+      }
+  
+      return res.json({
+        success: true,
+        latestPrediction,
+      });
+    } catch (error) {
+      console.error("Error fetching the latest prediction:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Error fetching the latest prediction.",
+        error: error.message,
+      });
+    }
+  };  
+  
 
-module.exports = { sensorData, realTimeGraph, dailyWiseGraph, prevDayEnergy, energyConsumption, getHighestKva, sensorDataByDate, getMonthlyEnergyConsumption };
+module.exports = { sensorData, realTimeGraph, dailyWiseGraph, prevDayEnergy, energyConsumption, getHighestKva, sensorDataByDate, getMonthlyEnergyConsumption, predictions, getLatestPrediction };
