@@ -290,7 +290,7 @@ const getMonthlyEnergyConsumption = async (req, res) => {
     }
 };
 
-/* const predictions = async (req, res) => {
+const predictions = async (req, res) => {
     const currentDate = new Date().toISOString().split("T")[0];
     const weekStartDate = new Date();
     weekStartDate.setDate(weekStartDate.getDate() - (weekStartDate.getDay() || 7)); // Get start of the current week
@@ -378,7 +378,7 @@ const getMonthlyEnergyConsumption = async (req, res) => {
       return res.status(500).json({ error: "Error checking predictions" });
     }
   };
-   */
+  
 const getLatestPrediction = async (req, res) => {
     try {
       // Fetch the latest prediction by sorting the collection based on the `createdAt` field
