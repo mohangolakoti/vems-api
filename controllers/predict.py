@@ -5,14 +5,18 @@ import sys
 import json
 from datetime import datetime, timedelta
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+data_file_path = os.path.join(script_dir, '../models/industry_data.csv') 
+model_file_path = os.path.join(script_dir, '../models/energymodel.pkl')
 
 # Load the dataset (historical data) to calculate day numbers
-data = pd.read_csv(r'D:/VS Code/EEE-PNEW/energy-api/models/industry_data.csv')  # Replace with your file path
+data = pd.read_csv(data_file_path)  # Replace with your file path
 data['date'] = pd.to_datetime(data['Date'])  # Ensure correct column name
 data['day_number'] = (data['date'] - data['date'].min()).dt.days
 
 # Load the trained model
-with open(r'D:/VS Code/EEE-PNEW/energy-api/models/energymodel.pkl', 'rb') as f:
+with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
 def predict_next_week(model, data, start_date):
