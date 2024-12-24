@@ -159,17 +159,17 @@ async function fetchDataAndStore() {
       console.log("First stored energy value for today:", firstStoredEnergyValue);
     }
 
-    const currentDate = format(new Date(), 'yyyy-MM-dd');
-    const fileName = `VITB_${currentDate}.txt`;
-    const filePath = path.join(__dirname, "VIT-Data", fileName);
+    //const currentDate = format(new Date(), 'yyyy-MM-dd');
+    //const fileName = `VITB_${currentDate}.txt`;
+    //const filePath = path.join(__dirname, "VIT-Data", fileName);
 
-    appendDataToFile(newData, filePath);
+    //appendDataToFile(newData, filePath);
   } catch (error) {
     console.error("Error fetching and storing sensor data:", error);
   }
 }
 
-// Function to append data to the file
+/* // Function to append data to the file
 async function appendDataToFile(data, filePath) {
   try {
     console.log("Appending data to file:", filePath);
@@ -184,7 +184,7 @@ async function appendDataToFile(data, filePath) {
   } catch (error) {
     console.error("Error appending data to file:", error);
   }
-}
+} */
 
 // Set intervals to initialize and fetch data every 10 minutes
 setInterval(initializeInitialEnergyValue, 10 * 60000);
