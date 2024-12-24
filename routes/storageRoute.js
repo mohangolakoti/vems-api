@@ -11,7 +11,7 @@ router.get('/daywise-graph/:date',controller.dailyWiseGraph)
 router.get('/highest-kva', controller.getHighestKva);
 router.get('/sensordatabydate/:date', controller.sensorDataByDate);
 router.get('/monthly-energy', controller.getMonthlyEnergyConsumption)
-router.get('/predict', controller.predictions);
-router.get('/latest-predictions', controller.getLatestPrediction);
+//router.get('/predict', controller.predictions);
+//router.get('/latest-predictions', controller.getLatestPrediction);
 
 module.exports = router;
