@@ -292,16 +292,13 @@ const getMonthlyEnergyConsumption = async (req, res) => {
 
 const predictions = async (req, res) => {
     const currentDate = new Date().toISOString().split("T")[0];
-    const weekStartDate = new Date();
-    weekStartDate.setDate(weekStartDate.getDate() - (weekStartDate.getDay() || 7)); // Get start of the current week
+    const weekStartDate = new Date(currentDate); // Align with Python script start date
     const formattedWeekStartDate = weekStartDate.toISOString().split("T")[0];
   
     try {
-      // Check if predictions already exist for this week
       const existingPrediction = await Prediction.findOne({ weekStartDate: formattedWeekStartDate });
   
       if (existingPrediction) {
-        // Remove IDs from response
         const sanitizedPredictions = existingPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
           date,
           predicted_units,
@@ -315,61 +312,49 @@ const predictions = async (req, res) => {
         });
       }
   
-      // Spawn the Python process
       const pythonProcess = spawn("python", ["./controllers/predict.py", currentDate]);
-  
       let scriptOutput = "";
   
-      // Accumulate output from the Python script
       pythonProcess.stdout.on("data", (data) => {
         scriptOutput += data.toString();
       });
   
-      // Handle errors from the Python script
       pythonProcess.stderr.on("data", (data) => {
         console.error("Python script error:", data.toString());
       });
   
-      // Handle when the Python process finishes
       pythonProcess.on("close", async (code) => {
-        console.log(`Python script exited with code ${code}`);
         if (code !== 0) {
           return res.status(500).json({ error: "Python script execution failed" });
         }
   
         try {
-          // Parse the JSON output from the Python script
           const predictions = JSON.parse(scriptOutput.trim());
   
-          // Validate the output
           if (!predictions?.next_week_predictions || predictions.next_month_prediction === undefined) {
             return res.status(400).json({ error: "Invalid predictions format" });
           }
   
-          // Create a new prediction document
           const newPrediction = new Prediction({
             weekStartDate: formattedWeekStartDate,
             nextWeekPredictions: predictions.next_week_predictions,
             nextMonthPrediction: predictions.next_month_prediction,
           });
   
-          // Save to MongoDB
           const savedPrediction = await newPrediction.save();
   
-          // Sanitize response by removing IDs
           const sanitizedPredictions = savedPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
             date,
             predicted_units,
           }));
   
-          // Respond with the saved prediction
           return res.json({
             success: true,
             predictions: sanitizedPredictions,
             nextMonthPrediction: savedPrediction.nextMonthPrediction,
           });
         } catch (error) {
-          console.error("Error parsing or saving Python output:", error);
+          console.error("Error processing predictions:", error);
           return res.status(500).json({ error: "Error processing predictions" });
         }
       });
@@ -378,6 +363,7 @@ const predictions = async (req, res) => {
       return res.status(500).json({ error: "Error checking predictions" });
     }
   };
+  
   
 const getLatestPrediction = async (req, res) => {
     try {
