@@ -12,6 +12,7 @@ const path = require('path')
 app.use(bodyParser.json());
 const { PythonShell } = require('python-shell');
 const { spawn } = require("child_process");
+const schedule = require("node-schedule");
 const Prediction = require("../models/predictionData");
 const EnergyData = require('../models/energyData');
 
@@ -290,28 +291,8 @@ const getMonthlyEnergyConsumption = async (req, res) => {
     }
 };
 
-const predictions = async (req, res) => {
-    const currentDate = new Date().toISOString().split("T")[0];
-    const weekStartDate = new Date(currentDate); // Align with Python script start date
-    const formattedWeekStartDate = weekStartDate.toISOString().split("T")[0];
-  
-    try {
-      const existingPrediction = await Prediction.findOne({ weekStartDate: formattedWeekStartDate });
-  
-      if (existingPrediction) {
-        const sanitizedPredictions = existingPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
-          date,
-          predicted_units,
-        }));
-  
-        return res.json({
-          success: true,
-          message: "Predictions for this week are already stored.",
-          predictions: sanitizedPredictions,
-          nextMonthPrediction: existingPrediction.nextMonthPrediction,
-        });
-      }
-  
+const runPredictionScript = async (currentDate, formattedWeekStartDate) => {
+    return new Promise((resolve, reject) => {
       const pythonProcess = spawn("python", ["./controllers/predict.py", currentDate]);
       let scriptOutput = "";
   
@@ -323,46 +304,95 @@ const predictions = async (req, res) => {
         console.error("Python script error:", data.toString());
       });
   
-      pythonProcess.on("close", async (code) => {
+      pythonProcess.on("close", (code) => {
         if (code !== 0) {
-          return res.status(500).json({ error: "Python script execution failed" });
+          return reject(new Error("Python script execution failed"));
         }
   
         try {
           const predictions = JSON.parse(scriptOutput.trim());
-  
           if (!predictions?.next_week_predictions || predictions.next_month_prediction === undefined) {
-            return res.status(400).json({ error: "Invalid predictions format" });
+            return reject(new Error("Invalid predictions format"));
           }
   
-          const newPrediction = new Prediction({
-            weekStartDate: formattedWeekStartDate,
-            nextWeekPredictions: predictions.next_week_predictions,
-            nextMonthPrediction: predictions.next_month_prediction,
-          });
-  
-          const savedPrediction = await newPrediction.save();
-  
-          const sanitizedPredictions = savedPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
-            date,
-            predicted_units,
-          }));
-  
-          return res.json({
-            success: true,
-            predictions: sanitizedPredictions,
-            nextMonthPrediction: savedPrediction.nextMonthPrediction,
-          });
+          resolve(predictions);
         } catch (error) {
-          console.error("Error processing predictions:", error);
-          return res.status(500).json({ error: "Error processing predictions" });
+          reject(error);
         }
       });
+    });
+  };
+  
+  const predictions = async (req, res) => {
+    const currentDate = new Date().toISOString().split("T")[0];
+    const weekStartDate = new Date();
+    weekStartDate.setDate(weekStartDate.getDate() - (weekStartDate.getDay() || 7)); // Get start of the current week
+    const formattedWeekStartDate = weekStartDate.toISOString().split("T")[0];
+  
+    try {
+      // Check for existing predictions
+      let existingPrediction = await Prediction.findOne({ weekStartDate: formattedWeekStartDate });
+  
+      if (!existingPrediction) {
+        console.log("No existing predictions found. Generating new predictions.");
+        const predictions = await runPredictionScript(currentDate, formattedWeekStartDate);
+  
+        // Save new predictions to the database
+        const newPrediction = new Prediction({
+          weekStartDate: formattedWeekStartDate,
+          nextWeekPredictions: predictions.next_week_predictions,
+          nextMonthPrediction: predictions.next_month_prediction,
+        });
+        existingPrediction = await newPrediction.save();
+      }
+  
+      const sanitizedPredictions = existingPrediction.nextWeekPredictions.map(({ date, predicted_units }) => ({
+        date,
+        predicted_units,
+      }));
+  
+      return res.json({
+        success: true,
+        predictions: sanitizedPredictions,
+        nextMonthPrediction: existingPrediction.nextMonthPrediction,
+      });
     } catch (error) {
-      console.error("Error checking existing predictions:", error);
-      return res.status(500).json({ error: "Error checking predictions" });
+      console.error("Error processing predictions:", error);
+      return res.status(500).json({ error: "Error processing predictions" });
     }
   };
+  
+  // Schedule the prediction script to run daily
+  schedule.scheduleJob("0 0 * * *", async () => {
+    const currentDate = new Date().toISOString().split("T")[0];
+    const weekStartDate = new Date();
+    weekStartDate.setDate(weekStartDate.getDate() - (weekStartDate.getDay() || 7)); // Start of the current week
+    const formattedWeekStartDate = weekStartDate.toISOString().split("T")[0];
+  
+    try {
+      console.log("Running scheduled prediction script...");
+      const existingPrediction = await Prediction.findOne({ weekStartDate: formattedWeekStartDate });
+  
+      if (!existingPrediction) {
+        const predictions = await runPredictionScript(currentDate, formattedWeekStartDate);
+  
+        // Save new predictions
+        const newPrediction = new Prediction({
+          weekStartDate: formattedWeekStartDate,
+          nextMonthPrediction: predictions.next_month_prediction,
+        });
+  
+        await newPrediction.save();
+        console.log("New predictions saved successfully.");
+      } else {
+        console.log("Predictions for this week are already up-to-date.");
+      }
+    } catch (error) {
+      console.error("Error during scheduled prediction script execution:", error);
+    }
+  });
+  
+  
   
   
 const getLatestPrediction = async (req, res) => {
