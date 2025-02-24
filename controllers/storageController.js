@@ -43,17 +43,17 @@ const energyConsumption = async (req, res) => {
                 })
                     .sort({ timestamp: -1 })
                     .select(
-                        "TotalNet_KWH_meter_70 energy_consumption_meter_69 energy_consumption_meter_41 energy_consumption_meter_40 timestamp"
+                        "TotalNet_KWH_meter_6 energy_consumption_meter_108 energy_consumption_meter_201 energy_consumption_meter_227 timestamp"
                     );
 
                 if (record) {
                     return {
                         date: format(record.timestamp, "yyyy-MM-dd"),
                         energy:
-                            (record.energy_consumption_meter_70 || 0) +
-                            (record.energy_consumption_meter_69 || 0) +
-                            (record.energy_consumption_meter_41 || 0) +
-                            (record.energy_consumption_meter_40 || 0),
+                            (record.energy_consumption_meter_6 || 0) +
+                            (record.energy_consumption_meter_108 || 0) +
+                            (record.energy_consumption_meter_201 || 0) +
+                            (record.energy_consumption_meter_227 || 0),
                     };
                 } else {
                     // No record found for this date
@@ -124,25 +124,25 @@ const prevDayEnergy = async (req, res) => {
         }).sort({ timestamp: 1 });
 
         let initialEnergyValues = {
-            meter_70: null,
-            meter_40: null,
-            meter_69: null,
-            meter_41: null,
+            meter_6: null,
+            meter_227: null,
+            meter_108: null,
+            meter_201: null,
         };
 
         if (previousDayRecord) {
             initialEnergyValues = {
-                meter_70: previousDayRecord.TotalNet_KWH_meter_70,
-                meter_40: previousDayRecord.TotalNet_KWH_meter_40,
-                meter_69: previousDayRecord.TotalNet_KWH_meter_69,
-                meter_41: previousDayRecord.TotalNet_KWH_meter_41,
+                meter_6: previousDayRecord.TotalNet_KWH_meter_6,
+                meter_227: previousDayRecord.TotalNet_KWH_meter_227,
+                meter_108: previousDayRecord.TotalNet_KWH_meter_108,
+                meter_201: previousDayRecord.TotalNet_KWH_meter_201,
             };
         } else if (todayFirstRecord) {
             initialEnergyValues = {
-                meter_70: todayFirstRecord.TotalNet_KWH_meter_70,
-                meter_40: todayFirstRecord.TotalNet_KWH_meter_40,
-                meter_69: todayFirstRecord.TotalNet_KWH_meter_69,
-                meter_41: todayFirstRecord.TotalNet_KWH_meter_41,
+                meter_6: todayFirstRecord.TotalNet_KWH_meter_6,
+                meter_227: todayFirstRecord.TotalNet_KWH_meter_227,
+                meter_108: todayFirstRecord.TotalNet_KWH_meter_108,
+                meter_201: todayFirstRecord.TotalNet_KWH_meter_201,
             };
         }
 
@@ -169,7 +169,7 @@ const getHighestKva = async (req, res) => {
             {
                 $group: {
                     _id: null,
-                    highest_kva_today: { $max: { $add: ["$Total_KVA_meter_70", "$Total_KVA_meter_40", "$Total_KVA_meter_69"] } }
+                    highest_kva_today: { $max: { $add: ["$Total_KVA_meter_6", "$Total_KVA_meter_201", "$Total_KVA_meter_108"] } }
                 }
             }
         ]);
@@ -186,7 +186,7 @@ const getHighestKva = async (req, res) => {
             {
                 $group: {
                     _id: null,
-                    highest_kva_month: { $max: { $add: ["$Total_KVA_meter_70", "$Total_KVA_meter_40", "$Total_KVA_meter_69"] } }
+                    highest_kva_month: { $max: { $add: ["$Total_KVA_meter_6", "$Total_KVA_meter_201", "$Total_KVA_meter_108"] } }
                 }
             }
         ]);
@@ -251,17 +251,17 @@ const getMonthlyEnergyConsumption = async (req, res) => {
             {
                 $group: {
                     _id: { date: "$date" }, // Group by date
-                    lastEnergyConsumptionMeter70: { $first: "$energy_consumption_meter_70" }, // Last value for meter 70
-                    lastEnergyConsumptionMeter69: { $first: "$energy_consumption_meter_69" }, // Last value for meter 69
-                    lastEnergyConsumptionMeter40: { $first: "$energy_consumption_meter_40" }, // Last value for meter 40
+                    lastEnergyConsumptionMeter6: { $first: "$energy_consumption_meter_6" }, // Last value for meter 6
+                    lastEnergyConsumptionMeter108: { $first: "$energy_consumption_meter_108" }, // Last value for meter 108
+                    lastEnergyConsumptionMeter201: { $first: "$energy_consumption_meter_201" }, // Last value for meter 201
                 },
             },
             {
                 $group: {
                     _id: null, // Group everything to calculate the total sum
-                    totalEnergyConsumptionMeter70: { $sum: "$lastEnergyConsumptionMeter70" }, // Sum last values for meter 70
-                    totalEnergyConsumptionMeter69: { $sum: "$lastEnergyConsumptionMeter69" }, // Sum last values for meter 69
-                    totalEnergyConsumptionMeter40: { $sum: "$lastEnergyConsumptionMeter40" }, // Sum last values for meter 40
+                    totalEnergyConsumptionMeter6: { $sum: "$lastEnergyConsumptionMeter6" }, // Sum last values for meter 6
+                    totalEnergyConsumptionMeter108: { $sum: "$lastEnergyConsumptionMeter108" }, // Sum last values for meter 108
+                    totalEnergyConsumptionMeter201: { $sum: "$lastEnergyConsumptionMeter201" }, // Sum last values for meter 201
                 },
             },
         ]);
@@ -272,15 +272,15 @@ const getMonthlyEnergyConsumption = async (req, res) => {
 
         // Calculate the overall total energy consumption for the month
         const totalEnergyConsumption =
-            monthlyData[0].totalEnergyConsumptionMeter70 +
-            monthlyData[0].totalEnergyConsumptionMeter69 +
-            monthlyData[0].totalEnergyConsumptionMeter40;
+            monthlyData[0].totalEnergyConsumptionMeter6 +
+            monthlyData[0].totalEnergyConsumptionMeter108 +
+            monthlyData[0].totalEnergyConsumptionMeter201;
 
         // Respond with the total energy consumption for the current month
         const response = {
-            totalEnergyConsumptionMeter70: monthlyData[0].totalEnergyConsumptionMeter70,
-            totalEnergyConsumptionMeter69: monthlyData[0].totalEnergyConsumptionMeter69,
-            totalEnergyConsumptionMeter40: monthlyData[0].totalEnergyConsumptionMeter40,
+            totalEnergyConsumptionMeter6: monthlyData[0].totalEnergyConsumptionMeter6,
+            totalEnergyConsumptionMeter108: monthlyData[0].totalEnergyConsumptionMeter108,
+            totalEnergyConsumptionMeter201: monthlyData[0].totalEnergyConsumptionMeter201,
             totalEnergyConsumption,
         };
 
