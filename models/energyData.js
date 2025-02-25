@@ -5,7 +5,7 @@ const energySchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    // Meter 70  pcc1
+    // Meter 6  pcc1
     Total_KW_meter_6: { type: Number, required: true, default: 0.0 },
     TotalNet_KWH_meter_6: { type: Number, required: true, default: 0.0 },
     Total_KVA_meter_6: { type: Number, required: true, default: 0.0 },
