@@ -4,13 +4,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotEnv = require("dotenv");
 const axios = require("axios");
-const fs = require("fs");
-const path = require("path");
 const { format } = require("date-fns");
 const app = express();
 const sensorDataRoutes = require("./routes/energydataRoute");
 const storageRoutes = require("./routes/storageRoute");
 const EnergyData = require("./models/energyData");
+const EnergySummary = require("./models/energySummary");
 
 dotEnv.config();
 
@@ -158,37 +157,37 @@ async function fetchDataAndStore() {
       isFirstDataStoredToday = true;
       console.log("First stored energy value for today:", firstStoredEnergyValue);
     }
-
-    //const currentDate = format(new Date(), 'yyyy-MM-dd');
-    //const fileName = `VITB_${currentDate}.txt`;
-    //const filePath = path.join(__dirname, "VIT-Data", fileName);
-
-    //appendDataToFile(newData, filePath);
   } catch (error) {
     console.error("Error fetching and storing sensor data:", error);
   }
 }
 
-/* // Function to append data to the file
-async function appendDataToFile(data, filePath) {
+async function storeEnergySummary() {
+  const response = await axios.get("https://gfiotsolutions.com/api/sensordata");
+  const newData = response.data[0];
+
+  const sumKVA = parseFloat(newData.Total_KVA_meter_6) +
+                 parseFloat(newData.Total_KVA_meter_108) +
+                 parseFloat(newData.Total_KVA_meter_201);
+
+  const sumPower = parseFloat(newData.Total_KW_meter_6) +
+                   parseFloat(newData.Total_KW_meter_108) +
+                   parseFloat(newData.Total_KW_meter_201);
+
+  const summary = new EnergySummary({ sumKVA, sumPower });
+
   try {
-    console.log("Appending data to file:", filePath);
-    const fileContent = `${format(new Date(), 'yyyy-MM-dd HH:mm:ss')},${data.Total_KW_meter_6},${data.TotalNet_KWH_meter_6},${data.Total_KVA_meter_6},${data.Avg_PF_meter_6},${data.TotalNet_KVAH_meter_6},${data.Total_KW_meter_108},${data.TotalNet_KWH_meter_108},${data.Total_KVA_meter_108},${data.Avg_PF_meter_108},${data.TotalNet_KVAH_meter_108},${data.Total_KW_meter_201},${data.TotalNet_KWH_meter_201},${data.Total_KVA_meter_201},${data.Avg_PF_meter_201},${data.TotalNet_KVAH_meter_201},${data.Total_KW_meter_227},${data.TotalNet_KWH_meter_227},${data.Total_KVA_meter_227},${data.Avg_PF_meter_227},${data.TotalNet_KVAH_meter_227}\n`;
-    fs.appendFile(filePath, fileContent, (error) => {
-      if (error) {
-        console.error("Error appending data to file:", error);
-      } else {
-        console.log("Data appended to file successfully:", filePath);
-      }
-    });
-  } catch (error) {
-    console.error("Error appending data to file:", error);
+    await summary.save();
+    console.log('Energy summary saved to database.');
+  } catch (err) {
+    console.error('Error saving energy summary:', err);
   }
-} */
+}
 
 // Set intervals to initialize and fetch data every 10 minutes
 setInterval(initializeInitialEnergyValue, 10 * 60000);
 setInterval(fetchDataAndStore, 10 * 60000);
+setInterval(storeEnergySummary, 1 * 60000);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);

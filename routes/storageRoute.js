@@ -13,5 +13,6 @@ router.get('/sensordatabydate/:date', controller.sensorDataByDate);
 router.get('/monthly-energy', controller.getMonthlyEnergyConsumption)
 router.get('/predict', controller.predictions);
 router.get('/latest-predictions', controller.getLatestPrediction);
+router.get('/energy-summaries', controller.getLatestEnergySummaries);
 
 module.exports = router;
